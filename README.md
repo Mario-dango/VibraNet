@@ -17,19 +17,21 @@
 
 ## 2) Arquitectura (E2E)
 
-```mermaid
 flowchart LR
-  subgraph Nodos [Capa Nodos (4–10)]
-    A1[ESP8266/ESP-01<br/>MPU6050 (GY-521)] -->|MQTT QoS1| BRK[(Mosquitto)]
-    A2[ESP8266/ESP-01<br/>MPU6050 (GY-521)] -->|MQTT QoS1| BRK
+  %% IDs simples (A–Z, 0–9, _), solo ASCII. Sin <br/> ni comillas curvas.
+  subgraph Capa_Nodos_4_10
+    A1["ESP8266 / ESP-01\nMPU6050 (GY-521)"] -->|MQTT QoS1| BRK[(Mosquitto)]
+    A2["ESP8266 / ESP-01\nMPU6050 (GY-521)"] -->|MQTT QoS1| BRK
   end
 
-  BRK --> NR[Node-RED<br/>Flows + Dashboards]
+  BRK --> NR["Node-RED\nFlows + Dashboards"]
   NR  --> DB[(MySQL)]
-  NR  --> A[Alertas/Notificaciones]
-  style BRK fill:#eee,stroke:#333
-  style DB fill:#eee,stroke:#333
-```
+  NR  --> A[Alertas / Notificaciones]
+
+  %% Estilo básico para infra
+  classDef infra fill:#eeeeee,stroke:#333333,stroke-width:1px;
+  class BRK,DB infra;
+
 
 **Notas:**
 
