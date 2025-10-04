@@ -32,7 +32,7 @@ flowchart LR
   %% Estilo básico para infra
   classDef infra fill:#eeeeee,stroke:#333333,stroke-width:1px;
   class BRK,DB infra;
-``
+```
 
 **Notas:**
 
