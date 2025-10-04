@@ -17,6 +17,7 @@
 
 ## 2) Arquitectura (E2E)
 
+```mermaid
 flowchart LR
   %% IDs simples (A–Z, 0–9, _), solo ASCII. Sin <br/> ni comillas curvas.
   subgraph Capa_Nodos_4_10
@@ -31,7 +32,7 @@ flowchart LR
   %% Estilo básico para infra
   classDef infra fill:#eeeeee,stroke:#333333,stroke-width:1px;
   class BRK,DB infra;
-
+``
 
 **Notas:**
 
