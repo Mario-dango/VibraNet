@@ -1,0 +1,7 @@
+La red de nodos requiere **autonomía eléctrica** para operar sin red fija. La fuente elegida es una celda Li-ion de factor de forma compacto ($\leq 50×50 \ \mathrm{mm}$, espesor $< 7.5 \ \mathrm{mm}$). El ESP8266 opera entre **2.5~3.6 V** y presenta cuatro modos de potencia (activo, modem-sleep, light-sleep y deep-sleep). Según el datasheet del ESP8266EX [^vendor], el consumo típico es: $\mathrm{deep-sleep} \approx 20 \mu \mathrm{A}$, $\mathrm{light-sleep} \approx 0.9  \mathrm{mA}$, $\mathrm{modem-sleep} \approx 15 \mathrm{mA}$, y en activo con radio el promedio ronda **decenas de mA** con picos de **>100 mA** en TX/RX (ver Tabla 3-4 “Power Consumption by Power Modes” y Tabla 1-1 “Specifications”).
+
+El consumo del módulo MPU6050 se debe suponer hasta realizarse mediciones. **Supuesto**: la IMU **MPU6050** añade **≈ 3–4 mA** en adquisición continua y **< 10 µA** en modo low-power accel. Estos valores se validarán en banco.
+
+**Implicancia:** la autonomía no la determina el consumo de $20 \mu \mathrm{A}$ en deep-sleep, sino el **duty cycle real** entre medir, transmitir y dormir. Además, el **rango de tensión de la celda Li-ion ($\approx 4.2 \to 3.0 V$)** no es directamente compatible con la ventana $2.5–3.6 V$ del ESP8266 si no se condiciona la tensión.
+
+[^vendor] : Disponible en: 
