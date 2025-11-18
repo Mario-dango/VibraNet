@@ -1,0 +1,29 @@
+[
+    {
+        "id": "a61c3154783d25a7",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "035f7b47427f5b97",
+        "type": "mqtt in",
+        "z": "a61c3154783d25a7",
+        "name": "",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    }
+]

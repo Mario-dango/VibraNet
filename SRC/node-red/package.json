@@ -1,0 +1,12 @@
+{
+    "name": "VibraNet",
+    "description": "Flujo para el control de Nodos de vibración",
+    "version": "",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}

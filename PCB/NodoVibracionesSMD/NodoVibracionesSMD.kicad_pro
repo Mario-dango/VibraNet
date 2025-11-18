@@ -68,7 +68,7 @@
         "connection_width": "warning",
         "copper_edge_clearance": "error",
         "copper_sliver": "warning",
-        "courtyards_overlap": "ignore",
+        "courtyards_overlap": "error",
         "diff_pair_gap_out_of_range": "error",
         "diff_pair_uncoupled_length_too_long": "error",
         "drill_out_of_range": "error",
@@ -82,7 +82,7 @@
         "invalid_outline": "error",
         "isolated_copper": "warning",
         "item_on_disabled_layer": "error",
-        "items_not_allowed": "ignore",
+        "items_not_allowed": "error",
         "length_out_of_range": "error",
         "lib_footprint_issues": "warning",
         "lib_footprint_mismatch": "warning",
@@ -115,8 +115,8 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.19999999999999998,
-        "min_connection": 0.19999999999999998,
+        "min_clearance": 0.0,
+        "min_connection": 0.0,
         "min_copper_edge_clearance": 0.5,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
@@ -127,7 +127,7 @@
         "min_text_height": 0.7999999999999999,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.19999999999999998,
+        "min_track_width": 0.0,
         "min_via_annular_width": 0.09999999999999999,
         "min_via_diameter": 0.5,
         "solder_mask_to_copper_clearance": 0.0,
@@ -178,9 +178,7 @@
       ],
       "track_widths": [
         0.0,
-        0.5,
-        0.8,
-        1.0
+        0.5
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -214,8 +212,12 @@
           "drill": 0.0
         },
         {
-          "diameter": 0.9,
+          "diameter": 1.0,
           "drill": 0.75
+        },
+        {
+          "diameter": 1.25,
+          "drill": 1.0
         }
       ],
       "zones_allow_external_fillets": false
@@ -450,7 +452,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "NodoVibraciones.kicad_pro",
+    "filename": "NodoVibracionesSMD.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -485,7 +487,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "Fab_output/",
+      "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -581,14 +583,6 @@
       "version": 1
     },
     "net_format_name": "",
-    "ngspice": {
-      "fix_include_paths": true,
-      "meta": {
-        "version": 0
-      },
-      "model_mode": 4,
-      "workbook_filename": ""
-    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "spice_current_sheet_as_root": false,
@@ -602,7 +596,7 @@
   },
   "sheets": [
     [
-      "93d2f0b1-2d60-4584-ad88-dd8b1dc37d8d",
+      "5e3f7258-041e-4243-a7cd-65f0e1eea206",
       "Raíz"
     ]
   ],
