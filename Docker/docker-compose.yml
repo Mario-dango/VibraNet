@@ -1,0 +1,53 @@
+services:
+  # 1. Broker MQTT
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mqtt_broker
+    ports:
+      - "1883:1883" # Puerto MQTT
+      - "9001:9001" # WebSockets
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+    restart: unless-stopped
+
+  # 2. Node-RED (Lógica y flujos)
+  node-red:
+    image: nodered/node-red:latest
+    container_name: nodered
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./node-red_data:/data
+    environment:
+      - TZ=America/Argentina/Buenos_Aires
+    depends_on:
+      - mosquitto
+      - influxdb
+    restart: unless-stopped
+
+  # 3. Base de Datos (InfluxDB para series temporales)
+  influxdb:
+    image: influxdb:2.7
+    container_name: influxdb
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./influxdb_data:/var/lib/influxdb2
+    restart: unless-stopped
+
+  # 4. Grafana (Dashboards)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana_data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin # Cambiar esto luego
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
+    depends_on:
+      - influxdb
+    restart: unless-stopped

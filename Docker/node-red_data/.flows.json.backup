@@ -1,0 +1,205 @@
+[
+    {
+        "id": "4cbfa92d75bed567",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "56983aab46619dc7",
+        "type": "mqtt-broker",
+        "name": "Docker MQTT",
+        "broker": "mosquitto",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4bb181e3f9078b3b",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "Docker InfluxDB",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://influxdb:8086",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "7b42a82f0af43759",
+        "type": "debug",
+        "z": "4cbfa92d75bed567",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "779528fc14958a3d",
+        "type": "inject",
+        "z": "4cbfa92d75bed567",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 160,
+        "wires": [
+            [
+                "8e25533b9f34ca28",
+                "be9e13f6f86ed880",
+                "4e9b911aa68052a3"
+            ]
+        ]
+    },
+    {
+        "id": "454016a8df02d329",
+        "type": "mqtt in",
+        "z": "4cbfa92d75bed567",
+        "name": "",
+        "topic": "test",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56983aab46619dc7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 260,
+        "wires": [
+            [
+                "7b42a82f0af43759"
+            ]
+        ]
+    },
+    {
+        "id": "8e25533b9f34ca28",
+        "type": "mqtt out",
+        "z": "4cbfa92d75bed567",
+        "name": "",
+        "topic": "test",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "56983aab46619dc7",
+        "x": 470,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1777f27acc25ab1e",
+        "type": "influxdb out",
+        "z": "4cbfa92d75bed567",
+        "influxdb": "4bb181e3f9078b3b",
+        "name": "",
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "Dango Prototype",
+        "bucket": "sensores",
+        "x": 720,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "be9e13f6f86ed880",
+        "type": "function",
+        "z": "4cbfa92d75bed567",
+        "name": "envio influxdb",
+        "func": "// Simulamos un sensor de temperatura\nmsg.payload = {\n    temp: 20 + Math.random() * 5, // Numero aleatorio entre 20 y 25\n    humedad: 50\n};\n// La \"measurement\" es como el nombre de la tabla\nmsg.measurement = \"cuarto_servidor\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 160,
+        "wires": [
+            [
+                "1777f27acc25ab1e"
+            ]
+        ]
+    },
+    {
+        "id": "4e9b911aa68052a3",
+        "type": "trigger",
+        "z": "4cbfa92d75bed567",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "be9e13f6f86ed880"
+            ]
+        ]
+    }
+]

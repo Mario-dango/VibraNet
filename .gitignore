@@ -1,0 +1,15 @@
+# --- Directorios de Datos (NO SUBIR) ---
+# Estos contienen las bases de datos pesadas y logs
+influxdb_data/
+mosquitto/data/
+mosquitto/log/
+grafana_data/
+
+# --- Dependencias de Node-RED (CRÍTICO) ---
+# Ignorar la carpeta gigante de librerías
+**/node_modules/
+
+# --- Archivos de sistema y entorno ---
+.DS_Store
+Thumbs.db
+.env
