@@ -1,0 +1,73 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.19.6
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/.npmrc
+5 silly config load:file:/usr/src/node-red/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm install node-red-contrib-stackhero-influxdb-v2@1.0.4
+8 verbose argv "install" "--no-audit" "--no-update-notifier" "--no-fund" "--save" "--save-prefix" "~" "--omit" "dev" "--engine-strict" "node-red-contrib-stackhero-influxdb-v2@1.0.4"
+9 verbose logfile logs-max:10 dir:/data/.npm/_logs/2026-01-07T09_23_29_506Z-
+10 verbose logfile /data/.npm/_logs/2026-01-07T09_23_29_506Z-debug-0.log
+11 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly fetch manifest node-red-contrib-stackhero-influxdb-v2@1.0.4
+15 silly packumentCache full:https://registry.npmjs.org/node-red-contrib-stackhero-influxdb-v2 cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/node-red-contrib-stackhero-influxdb-v2 1254ms (cache miss)
+17 silly packumentCache full:https://registry.npmjs.org/node-red-contrib-stackhero-influxdb-v2 set size:undefined disposed:false
+18 silly placeDep ROOT node-red-contrib-stackhero-influxdb-v2@1.0.4 OK for: node-red-project@0.0.1 want: 1.0.4
+19 silly fetch manifest influxdb-v2@1.0.0
+20 silly packumentCache full:https://registry.npmjs.org/influxdb-v2 cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/influxdb-v2 377ms (cache miss)
+22 silly packumentCache full:https://registry.npmjs.org/influxdb-v2 set size:undefined disposed:false
+23 silly placeDep ROOT influxdb-v2@1.0.0 OK for: node-red-contrib-stackhero-influxdb-v2@1.0.4 want: 1.0.0
+24 silly fetch manifest node-fetch@^2.6.1
+25 silly packumentCache full:https://registry.npmjs.org/node-fetch cache-miss
+26 http fetch GET 200 https://registry.npmjs.org/node-fetch 165ms (cache miss)
+27 silly packumentCache full:https://registry.npmjs.org/node-fetch set size:undefined disposed:false
+28 silly fetch manifest encoding@^0.1.0
+29 silly packumentCache full:https://registry.npmjs.org/encoding cache-miss
+30 http fetch GET 200 https://registry.npmjs.org/encoding 315ms (cache miss)
+31 silly packumentCache full:https://registry.npmjs.org/encoding set size:undefined disposed:false
+32 silly placeDep ROOT node-fetch@2.7.0 OK for: influxdb-v2@1.0.0 want: ^2.6.1
+33 silly fetch manifest whatwg-url@^5.0.0
+34 silly packumentCache full:https://registry.npmjs.org/whatwg-url cache-miss
+35 http fetch GET 200 https://registry.npmjs.org/whatwg-url 665ms (cache miss)
+36 silly packumentCache full:https://registry.npmjs.org/whatwg-url set size:undefined disposed:false
+37 silly placeDep ROOT whatwg-url@5.0.0 OK for: node-fetch@2.7.0 want: ^5.0.0
+38 silly fetch manifest tr46@~0.0.3
+39 silly packumentCache full:https://registry.npmjs.org/tr46 cache-miss
+40 silly fetch manifest webidl-conversions@^3.0.0
+41 silly packumentCache full:https://registry.npmjs.org/webidl-conversions cache-miss
+42 http fetch GET 200 https://registry.npmjs.org/webidl-conversions 262ms (cache miss)
+43 silly packumentCache full:https://registry.npmjs.org/webidl-conversions set size:undefined disposed:false
+44 http fetch GET 200 https://registry.npmjs.org/tr46 725ms (cache miss)
+45 silly packumentCache full:https://registry.npmjs.org/tr46 set size:undefined disposed:false
+46 silly placeDep ROOT tr46@0.0.3 OK for: whatwg-url@5.0.0 want: ~0.0.3
+47 silly placeDep ROOT webidl-conversions@3.0.1 OK for: whatwg-url@5.0.0 want: ^3.0.0
+48 silly reify moves {}
+49 silly tarball no local data for node-fetch@https://registry.npmjs.org/node-fetch/-/node-fetch-2.7.0.tgz. Extracting by manifest.
+50 silly tarball no local data for webidl-conversions@https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-3.0.1.tgz. Extracting by manifest.
+51 silly tarball no local data for tr46@https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz. Extracting by manifest.
+52 silly tarball no local data for node-red-contrib-stackhero-influxdb-v2@https://registry.npmjs.org/node-red-contrib-stackhero-influxdb-v2/-/node-red-contrib-stackhero-influxdb-v2-1.0.4.tgz. Extracting by manifest.
+53 silly tarball no local data for whatwg-url@https://registry.npmjs.org/whatwg-url/-/whatwg-url-5.0.0.tgz. Extracting by manifest.
+54 silly tarball no local data for influxdb-v2@https://registry.npmjs.org/influxdb-v2/-/influxdb-v2-1.0.0.tgz. Extracting by manifest.
+55 http fetch GET 200 https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-3.0.1.tgz 122ms (cache miss)
+56 http fetch GET 200 https://registry.npmjs.org/node-fetch/-/node-fetch-2.7.0.tgz 190ms (cache miss)
+57 http fetch GET 200 https://registry.npmjs.org/whatwg-url/-/whatwg-url-5.0.0.tgz 229ms (cache miss)
+58 http fetch GET 200 https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz 262ms (cache miss)
+59 http fetch GET 200 https://registry.npmjs.org/influxdb-v2/-/influxdb-v2-1.0.0.tgz 429ms (cache miss)
+60 http fetch GET 200 https://registry.npmjs.org/node-red-contrib-stackhero-influxdb-v2/-/node-red-contrib-stackhero-influxdb-v2-1.0.4.tgz 1305ms (cache miss)
+61 silly ADD node_modules/webidl-conversions
+62 silly ADD node_modules/tr46
+63 silly ADD node_modules/whatwg-url
+64 silly ADD node_modules/node-fetch
+65 silly ADD node_modules/influxdb-v2
+66 silly ADD node_modules/node-red-contrib-stackhero-influxdb-v2
+67 verbose cwd /data
+68 verbose os Linux 6.6.87.2-microsoft-standard-WSL2
+69 verbose node v20.19.6
+70 verbose npm  v10.8.2
+71 verbose exit 0
+72 info ok

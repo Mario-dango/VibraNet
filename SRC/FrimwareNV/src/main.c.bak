@@ -1,0 +1,157 @@
+/*
+ * main.c - Integración MPU6050 + MQTT para Wemos D1 Mini
+ * SDK: ESP8266 RTOS SDK v1.5
+ */
+
+#include "esp_common.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "uart.h"
+#include "gpio.h"
+#include "config.h"
+
+// Librerías de terceros (Asegúrate que estén en /lib o /include)
+#include "mqtt.h"   // Librería tuanpmt/esp_mqtt
+#include "mpu6050.h"     // Tu librería del sensor (recuerda el fix de c_types.h)
+
+// ============================================================
+// CONFIGURACIÓN DE USUARIO (¡EDITAR ESTO!)
+// ============================================================
+#define WIFI_SSID       "NOMBRE_DE_TU_WIFI"
+#define WIFI_PASS       "CONTRASEÑA_WIFI"
+
+// IMPORTANTE: Pon la IP local de tu PC donde corre Docker (ej. 192.168.1.50)
+// NO uses "localhost" ni "127.0.0.1"
+#define MQTT_HOST       "192.168.1.XXX" 
+#define MQTT_PORT       1883
+#define MQTT_USER       ""              // Usuario (déjalo vacío si no usas)
+#define MQTT_PASS       ""              // Contraseña (déjalo vacío si no usas)
+#define MQTT_CLIENT_ID  "Dango_Wemos_01"
+#define MQTT_TOPIC      "dango/iot/mpu6050"
+
+// Intervalo de envío en milisegundos (ej. 1000ms = 1 segundo)
+#define SEND_INTERVAL_MS  1000 
+
+// ============================================================
+// VARIABLES GLOBALES
+// ============================================================
+MQTT_Client mqttClient;
+bool is_mqtt_connected = false;
+
+// ============================================================
+// CALLBACKS MQTT
+// ============================================================
+
+void mqttConnectedCb(uint32_t *args) {
+    MQTT_Client* client = (MQTT_Client*)args;
+    printf("MQTT: Conectado al broker %s\n", MQTT_HOST);
+    is_mqtt_connected = true;
+    
+    // Publicar mensaje de bienvenida (opcional)
+    MQTT_Publish(client, "dango/iot/status", "online", 6, 0, 0);
+}
+
+void mqttDisconnectedCb(uint32_t *args) {
+    printf("MQTT: Desconectado\n");
+    is_mqtt_connected = false;
+}
+
+void mqttDataCb(uint32_t *args, const char* topic, uint32_t topic_len, const char *data, uint32_t data_len) {
+    // Aquí recibirías datos si te suscribes a algo. Por ahora no hace nada.
+}
+
+void mqttPublishedCb(uint32_t *args) {
+    printf("MQTT: Datos enviados correctamente.\n");
+}
+
+// ============================================================
+// TAREA PRINCIPAL (SENSOR + ENVÍO)
+// ============================================================
+void sensor_task(void *pvParameters) {
+    // Buffer para crear el string JSON
+    char payload[128]; 
+    
+    // Variables para guardar datos del sensor (asumiendo enteros crudos)
+    int16_t ax = 0, ay = 0, az = 0;
+    int16_t gx = 0, gy = 0, gz = 0;
+
+    // Inicializar I2C/MPU (Ajusta según tu librería mpu6050.h)
+    // Normalmente en Wemos: SDA=GPIO4, SCL=GPIO5
+    printf("Iniciando MPU6050...\n");
+    // mpu6050_init(); // <--- DESCOMENTA ESTO si tu librería tiene init
+    
+    while (1) {
+        // 1. Leer datos del sensor (Ajusta los nombres según tu librería)
+        // Ejemplo:
+        // mpu6050_get_accel(&ax, &ay, &az);
+        // mpu6050_get_gyro(&gx, &gy, &gz);
+        
+        // *Valores simulados para probar si no tienes el sensor conectado aún*
+        ax = rand() % 100; 
+        ay = rand() % 100;
+
+        if (is_mqtt_connected) {
+            // 2. Formatear como JSON para que Node-RED/Grafana lo entiendan fácil
+            // Formato: {"ax": 123, "ay": 456, "az": 789}
+            sprintf(payload, "{\"ax\":%d, \"ay\":%d, \"az\":%d, \"gx\":%d}", ax, ay, az, gx);
+
+            printf("Enviando: %s\n", payload);
+
+            // 3. Publicar al tema MQTT
+            // QoS 0 (rápido), Retain 0 (no guardar)
+            MQTT_Publish(&mqttClient, MQTT_TOPIC, payload, strlen(payload), 0, 0);
+        } else {
+            printf("Esperando conexión MQTT...\n");
+        }
+
+        // 4. Esperar X tiempo antes de la siguiente lectura
+        vTaskDelay(SEND_INTERVAL_MS / portTICK_RATE_MS);
+    }
+}
+
+// ============================================================
+// CONFIGURACIÓN WI-FI
+// ============================================================
+void wifi_init(void) {
+    struct station_config stationConf;
+
+    wifi_set_opmode(STATION_MODE);
+    memset(&stationConf, 0, sizeof(struct station_config));
+    
+    sprintf(stationConf.ssid, "%s", WIFI_SSID);
+    sprintf(stationConf.password, "%s", WIFI_PASS);
+    
+    wifi_station_set_config(&stationConf);
+    wifi_station_connect();
+    
+    printf("Conectando a Wi-Fi: %s ...\n", WIFI_SSID);
+}
+
+// ============================================================
+// MAIN (User Init)
+// ============================================================
+void user_init(void) {
+    // 1. Iniciar UART para ver logs a 74880 o 115200
+    uart_init_new(); 
+    printf("\nSDK versión:%s\n", system_get_sdk_version());
+
+    // 2. Iniciar Wi-Fi
+    wifi_init();
+
+    // 3. Configurar estructura MQTT
+    MQTT_InitConnection(&mqttClient, MQTT_HOST, MQTT_PORT, 0);
+    MQTT_InitClient(&mqttClient, MQTT_CLIENT_ID, MQTT_USER, MQTT_PASS, 120, 1);
+    
+    // Asignar Callbacks
+    MQTT_OnConnected(&mqttClient, mqttConnectedCb);
+    MQTT_OnDisconnected(&mqttClient, mqttDisconnectedCb);
+    MQTT_OnPublished(&mqttClient, mqttPublishedCb);
+    MQTT_OnData(&mqttClient, mqttDataCb);
+
+    // 4. Iniciar servicio MQTT
+    MQTT_Init(&mqttClient);
+
+    // 5. Crear la tarea que lee el sensor y envía datos
+    // Prioridad 2, Stack 1024 bytes (ajustar si se queda corto)
+    xTaskCreate(sensor_task, "sensor_task", 1024, NULL, 2, NULL);
+}

@@ -8,6 +8,22 @@
         "env": []
     },
     {
+        "id": "a9c03d3f35ffc9ac",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b29ae43622fe4a42",
+        "type": "tab",
+        "label": "funcionan",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "56983aab46619dc7",
         "type": "mqtt-broker",
         "name": "Docker MQTT",
@@ -54,6 +70,14 @@
         "rejectUnauthorized": true
     },
     {
+        "id": "98e8ab9a245e34a9",
+        "type": "Stackhero-InfluxDB-v2-Server",
+        "name": "influxdb-Docker",
+        "host": "influxdb",
+        "port": "8086",
+        "tls": false
+    },
+    {
         "id": "7b42a82f0af43759",
         "type": "debug",
         "z": "4cbfa92d75bed567",
@@ -95,7 +119,6 @@
         "wires": [
             [
                 "8e25533b9f34ca28",
-                "be9e13f6f86ed880",
                 "4e9b911aa68052a3"
             ]
         ]
@@ -117,7 +140,8 @@
         "y": 260,
         "wires": [
             [
-                "7b42a82f0af43759"
+                "7b42a82f0af43759",
+                "be9e13f6f86ed880"
             ]
         ]
     },
@@ -201,5 +225,411 @@
                 "be9e13f6f86ed880"
             ]
         ]
+    },
+    {
+        "id": "e280d4caffdd443a",
+        "type": "function",
+        "z": "4cbfa92d75bed567",
+        "name": "nodo to influxdb",
+        "func": "// Obtener el payload parseado\nvar rawData = msg.payload;\nvar device = rawData.device_id;\nvar outputPoints = [];\n\n// Recorremos las claves dentro de \"sensors\" (mpu_1, mpu_2, etc.)\n// Esto hace que el código funcione igual si hay 1, 2 o 20 sensores.\nfor (var sensorName in rawData.sensors) {\n    if (rawData.sensors.hasOwnProperty(sensorName)) {\n        var readings = rawData.sensors[sensorName];\n\n        // Estructura para nodo node-red-contrib-influxdb\n        outputPoints.push({\n            measurement: \"aceleracion_raw\", // Nombre de la tabla\n            tags: {\n                host: device,          // Tag: qué ESP8266 es\n                sensor_id: sensorName  // Tag: qué MPU es (mpu_1 o mpu_2)\n            },\n            fields: {\n                ax: parseFloat(readings.ax),\n                ay: parseFloat(readings.ay),\n                az: parseFloat(readings.az)\n            },\n            // Opcional: Si el ESP envía timestamp, úsalo. Si no, Influx usa la hora actual.\n            // timestamp: new Date() \n        });\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "57236e125be2024a",
+        "type": "debug",
+        "z": "a9c03d3f35ffc9ac",
+        "name": "test tag",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1e0e8f64a7fcd916",
+        "type": "mqtt in",
+        "z": "a9c03d3f35ffc9ac",
+        "name": "",
+        "topic": "dango/iot/sensors",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56983aab46619dc7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "59f25368bcf54c11"
+            ]
+        ]
+    },
+    {
+        "id": "59f25368bcf54c11",
+        "type": "json",
+        "z": "a9c03d3f35ffc9ac",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "4f96ab737eb020f3"
+            ]
+        ]
+    },
+    {
+        "id": "71fa786e57853469",
+        "type": "comment",
+        "z": "a9c03d3f35ffc9ac",
+        "name": "probando nuevo pallet que funciona",
+        "info": "",
+        "x": 400,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ba1e07961790fe95",
+        "type": "Stackhero-InfluxDB-v2-write",
+        "z": "a9c03d3f35ffc9ac",
+        "server": "98e8ab9a245e34a9",
+        "name": "influxdb",
+        "x": 600,
+        "y": 120,
+        "wires": [
+            [
+                "57236e125be2024a"
+            ]
+        ]
+    },
+    {
+        "id": "4f96ab737eb020f3",
+        "type": "function",
+        "z": "a9c03d3f35ffc9ac",
+        "name": "function 1",
+        "func": "// --- 1. PREPARACIÓN DE DATOS ---\nvar inputData = msg.payload;\n\n// Aseguramos que sea un objeto JSON\nif (typeof inputData === \"string\") {\n    try { inputData = JSON.parse(inputData); } catch (e) { return null; }\n}\n\nvar nodeId = inputData.id || \"unknown\";\n\n// --- 2. FILTRO DE SEGURIDAD ---\n// (Mantenemos tu seguridad para evitar simuladores)\nvar validSensors = [\"Dango_Node_001\", \"Dango_Node_002\", \"Telescopio_01\", \"Industria_SRO\"];\nif (!validSensors.includes(nodeId)) {\n    // Si quieres ver un aviso en el debug, descomenta la siguiente línea:\n    // node.warn(\"ID desconocido bloqueado: \" + nodeId);\n    return null; \n}\n\n// --- 3. CONTEXTO Y TAGS ---\nvar clientName = \"Dango_Prototype\";\nvar locationName = \"Lab_General\";\nvar ssid = inputData.wifi || \"Desconocida\"; // Preparado para cuando el ESP lo envíe\n\nif (nodeId === \"Dango_Node_001\" || nodeId === \"Telescopio_01\") {\n    clientName = \"Observatorio_Nacional\";\n    locationName = \"Base_Acimutal\";\n} else if (nodeId === \"Dango_Node_002\") {\n    clientName = \"Industria_SRO\";\n    locationName = \"Cinta_Transportadora\";\n}\n\n// --- 4. CONSTRUCCIÓN PARA STACKHERO INFLUXDB ---\nvar dataPoints = [];\n\n// Función auxiliar para crear el objeto de dato\nfunction createPoint(sensorCode, d) {\n    return {\n        measurement: 'vibration_sensor',\n        tags: {\n            client: clientName,           // Tag Cliente\n            location: locationName,       // Tag Lugar\n            node: nodeId,                 // Tag ID del Nodo\n            sensor: sensorCode,           // Tag Sensor (s1, s2)\n            redSSID: ssid,                // Tag Red Wifi\n            hw_ver: '1.5',                // Tag Versión Hardware\n            sw_ver: '2.5.1'               // Tag Versión Software\n        },\n        fields: {\n            ax: parseFloat(d.ax),\n            ay: parseFloat(d.ay),\n            az: parseFloat(d.az),\n            // Calculamos magnitud aquí mismo\n            mag_acc: parseFloat(Math.sqrt(d.ax*d.ax + d.ay*d.ay + d.az*d.az).toFixed(4))\n        },\n        timestamp: Date.now() // Usamos hora actual del servidor\n    };\n}\n\n// Procesamos s1 y s2 si existen\nif (inputData.s1) dataPoints.push(createPoint(\"s1\", inputData.s1));\nif (inputData.s2) dataPoints.push(createPoint(\"s2\", inputData.s2));\n\n// Si no hay datos validos, salir\nif (dataPoints.length === 0) return null;\n\n// --- 5. SALIDA FINAL ---\n// Esta es la estructura exacta que pide el nodo Stackhero\nmsg.payload = {\n    bucket: 'Vibranet_data', // Tu bucket real\n    precision: 'ms',         // Milisegundos (coincide con Date.now())\n    data: dataPoints         // El array con los objetos\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 120,
+        "wires": [
+            [
+                "ba1e07961790fe95"
+            ]
+        ]
+    },
+    {
+        "id": "8f0fbca4ac63a20f",
+        "type": "function",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "fake_node_simulator",
+        "func": "// SIMULADOR DE NODO INDUSTRIAL (Ej: Motor de Cinta)\n// ID diferente para que el sistema lo reconozca como otro cliente\nvar fakeNodeId = \"Dango_Node_Sim_02\"; \n\n// Generamos vibración sintética\n// Usamos Math.sin() para simular rotación y Math.random() para ruido/vibración\nvar time = new Date().getTime() / 1000; // Tiempo en segundos\nvar freq = 5; // Frecuencia de vibración simulada (5Hz)\n\nfunction getVibration(amplitude, noiseLevel) {\n    // Señal base (onda) + Ruido aleatorio\n    return (Math.sin(time * freq) * amplitude) + ((Math.random() - 0.5) * noiseLevel);\n}\n\n// Creamos el payload idéntico al del ESP8266 real\nvar simulatedPayload = {\n    id: fakeNodeId,\n    s1: {\n        // Sensor 1: Mucha vibración (simula un motor desbalanceado)\n        ax: getVibration(0.8, 0.2).toFixed(2),\n        ay: getVibration(0.5, 0.1).toFixed(2),\n        az: (9.8 + getVibration(0.2, 0.1)).toFixed(2) // Gravedad + vibración vertical\n    },\n    s2: {\n        // Sensor 2: Poca vibración (estructura estable)\n        ax: getVibration(0.05, 0.01).toFixed(2),\n        ay: getVibration(0.05, 0.01).toFixed(2),\n        az: (9.8 + getVibration(0.02, 0.01)).toFixed(2)\n    }\n};\n\nmsg.payload = simulatedPayload; // Enviamos como Objeto JSON\n// IMPORTANTE: El nodo MQTT out debe encargarse de hacer JSON.stringify \n// o puedes hacerlo aquí con msg.payload = JSON.stringify(simulatedPayload);\n\n// Usamos el mismo tópico que el real\nmsg.topic = \"dango/iot/sensors\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 100,
+        "wires": [
+            [
+                "309468615f84a1ae"
+            ]
+        ]
+    },
+    {
+        "id": "8885ecf346974837",
+        "type": "inject",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 40,
+        "wires": [
+            [
+                "8f0fbca4ac63a20f"
+            ]
+        ]
+    },
+    {
+        "id": "309468615f84a1ae",
+        "type": "mqtt out",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "",
+        "topic": "dango/iot/sensors",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "56983aab46619dc7",
+        "x": 470,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "3b8d174b799a2945",
+        "type": "debug",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "test tag",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "e1b5696c5bdf2c5c",
+        "type": "http request",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 300,
+        "wires": [
+            [
+                "3b8d174b799a2945"
+            ]
+        ]
+    },
+    {
+        "id": "98c8b35ae7a6eb22",
+        "type": "mqtt in",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "",
+        "topic": "dango/iot/sensors",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56983aab46619dc7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "f81e4afe24b63ac6"
+            ]
+        ]
+    },
+    {
+        "id": "f81e4afe24b63ac6",
+        "type": "json",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 190,
+        "y": 300,
+        "wires": [
+            [
+                "269e89762e2eea77"
+            ]
+        ]
+    },
+    {
+        "id": "87e2e7c21a708f96",
+        "type": "comment",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "estos funcionan",
+        "info": "",
+        "x": 660,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "269e89762e2eea77",
+        "type": "function",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "Split+tag+http",
+        "func": "// --- 1. CONFIGURACIÓN ---\nvar token = \"7FAY819FfUvp5T3fhz0yId-jwd5Lg_c0OnNbhADkSdBW0pWMQmR7cPjf5zZq3Yo710vJEC0u-qbJBKH4lWxFEQ==\"; \nvar ip_influx = \"192.168.100.68\"; \nvar org = \"Dango Prototype\";\nvar bucket = \"Vibranet_data\";\n\n// --- 2. OBTENCIÓN DE DATOS ---\nvar inputData = msg.payload;\nif (typeof inputData === \"string\") {\n    try { inputData = JSON.parse(inputData); } catch (e) {}\n}\n\nvar nodeId = inputData.id || \"unknown\";\n\n// --- 3. FILTRO DE SEGURIDAD (LA NOVEDAD) 🚫 ---\n// Si el ID no es de tus sensores reales conocidos, SE CANCELA.\n// Así evitas que entre basura o simulaciones por error.\nvar validSensors = [\"Dango_Node_001\", \"Dango_Node_002\", \"Telescopio_01\", \"Industria_SRO\"];\n\nif (!validSensors.includes(nodeId)) {\n    node.warn(\"¡Intruso bloqueado! ID desconocido intentó entrar: \" + nodeId);\n    return null; // Detiene el flujo aquí. No llega al HTTP Request.\n}\n\n// --- 4. LÓGICA DE NEGOCIO (Tags) ---\nvar clientName = \"Dango_Prototype\";\nvar locationName = \"Lab_General\";\n\nif (nodeId === \"Dango_Node_001\" || nodeId === \"Telescopio_01\") {\n    clientName = \"Observatorio_Nacional\";\n    locationName = \"Base_Acimutal\";\n} else if (nodeId === \"Dango_Node_002\" || nodeId === \"Industria_SRO\") {\n    clientName = \"Industria_SRO\";\n    locationName = \"Cinta_Transportadora\";\n}\n\n// --- 5. CONSTRUCCIÓN DEL LINE PROTOCOL ---\nvar lines = [];\n\nfunction addLine(sensorName, d) {\n    var ax = parseFloat(d.ax);\n    var ay = parseFloat(d.ay);\n    var az = parseFloat(d.az);\n    var mag = Math.sqrt(ax*ax + ay*ay + az*az).toFixed(4);\n\n    var line = `vibration_sensor,client=${clientName},node=${nodeId},location=${locationName},sensor=${sensorName} ax=${ax},ay=${ay},az=${az},mag_acc=${mag}`;\n    lines.push(line);\n}\n\n// Solo procesa si existen los campos\nif (inputData.s1) addLine(\"s1\", inputData.s1);\nif (inputData.s2) addLine(\"s2\", inputData.s2);\n\n// --- 6. SALIDA ---\nif (lines.length === 0) return null;\n\nmsg.payload = lines.join(\"\\n\");\nmsg.headers = {\n    \"Authorization\": \"Token \" + token,\n    \"Content-Type\": \"text/plain; charset=utf-8\",\n    \"Accept\": \"application/json\"\n};\nmsg.url = \"http://\" + ip_influx + \":8086/api/v2/write?org=\" + encodeURIComponent(org) + \"&bucket=\" + encodeURIComponent(bucket) + \"&precision=s\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "e1b5696c5bdf2c5c"
+            ]
+        ]
+    },
+    {
+        "id": "e5da63421b55f515",
+        "type": "comment",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "Simulador de nodo",
+        "info": "",
+        "x": 690,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "042f1760e95e7824",
+        "type": "Stackhero-InfluxDB-v2-write",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "server": "98e8ab9a245e34a9",
+        "name": "influxdb",
+        "x": 480,
+        "y": 420,
+        "wires": [
+            [
+                "eeeb7f11b210a480"
+            ]
+        ]
+    },
+    {
+        "id": "a388a1f715f37893",
+        "type": "function",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "test",
+        "func": "msg.payload = {\n  // You bucket\n  // Optional (it can be defined in the node credentials settings)\n  bucket: 'test',\n\n  // Precision of timestamp\n  // Optional\n  // Can be `ns` (nanoseconds),\n  //        `us` (microseconds),\n  //        `ms` (milliseconds),\n  //        `s` (seconds).\n  // The default is `ns`\n  // Note: if you set the `timestamp` field to `Date.now()`, you have to set the `precision` to `ms`\n  precision: 'ms',\n\n  // Data to send to InfluxDB\n  // Can be an array of objects or only one object\n  data: [\n    {\n      measurement: 'machinerySensor',\n\n      tags: {\n        deviceId: 'gyh43',\n        hardwareVersion: '1.0.2',\n        softwareVersion: '2.5.1',\n        location: 'factory-1'\n      },\n\n      fields: {\n        temperature: 12,\n        humidity: 46,\n        vibrations: 18,\n        batteryVoltage: 3.6\n      },\n\n      timestamp: Date.now()\n    },\n\n    // More data can be send here, simply re add an object\n    // { ... },\n  ]\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "042f1760e95e7824"
+            ]
+        ]
+    },
+    {
+        "id": "eeeb7f11b210a480",
+        "type": "debug",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "debug test",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "58d77b253c7ccdf1",
+        "type": "inject",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 420,
+        "wires": [
+            [
+                "a388a1f715f37893"
+            ]
+        ]
+    },
+    {
+        "id": "610ea2e524838f01",
+        "type": "comment",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "name": "estos tmb funcionan",
+        "info": "",
+        "x": 390,
+        "y": 380,
+        "wires": []
     }
 ]
