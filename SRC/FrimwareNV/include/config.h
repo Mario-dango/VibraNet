@@ -20,6 +20,6 @@
 // Configuración MQTT
 #define MQTT_SERVER "192.168.100.68" // ¡PON TU IP DE DOCKER/MOSQUITTO!
 #define MQTT_PORT 1883
-#define MQTT_TOPIC "dango/iot/sensors"
+#define MQTT_TOPIC "vibranet/data"
 
 #endif // CONFIG_H
