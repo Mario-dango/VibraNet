@@ -2,7 +2,6 @@
  * main.cpp - Vibranet Node v2.1 (Burst Mode Ready)
  * Soporta Wemos D1 Mini y ESP07
  */
-
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
@@ -12,6 +11,10 @@
 #include <WiFiManager.h>
 #include <TaskScheduler.h>
 #include "config.h" 
+
+#include <FS.h>          // Manejo de archivos
+#include <LittleFS.h>    // Sistema de archivos (mejor que SPIFFS)
+#include <ArduinoJson.h> // Para guardar la config de forma limpia
 
 // ================= CONFIGURACIÓN BURST (ANÁLISIS FRECUENCIA) =================
 // 256 muestras es suficiente para detectar fundamentales y armónicos básicos.
@@ -45,6 +48,13 @@ struct SensorReadings {
 bool ledState = HIGH; 
 long publishInterval = 1000; 
 
+// 1. Variables Globales para guardar la config MQTT
+char mqtt_server[40] = "192.168.1.60"; // Valor por defecto
+char mqtt_port[6] = "1883";             // Valor por defecto
+
+// Flag para saber si hay que guardar
+bool shouldSaveConfig = false;
+
 // ================= PROTOTIPOS =================
 void taskReadSensorsCb();
 void taskMqttPublishCb();
@@ -55,6 +65,7 @@ void setupSensors();
 void flashLed();
 float getBatteryVoltage(); 
 void performBurstCapture(); // <--- NUEVA FUNCIÓN DE CAPTURA
+void saveConfigCallback ();
 
 // ================= TAREAS (SCHEDULER) =================
 Task tRead(100, TASK_FOREVER, &taskReadSensorsCb);
@@ -203,6 +214,12 @@ void mqttCallback(char* topic, byte* payload, unsigned int length) {
     }
 }
 
+// Callback que se ejecuta cuando el usuario da a "Guardar" en el portal WiFi
+void saveConfigCallback () {
+  Serial.println("Se ha modificado la configuración");
+  shouldSaveConfig = true;
+}
+
 void setupSensors() {
     Wire.begin(); 
     // Configuramos los sensores
@@ -283,25 +300,90 @@ void taskErrorBlinkCb() {
 
 void setup() {
     Serial.begin(115200);
-    pinMode(LED_PIN, OUTPUT);
-    digitalWrite(LED_PIN, HIGH);
+    
+    // --- NUEVO: MONTAJE DE SISTEMA DE ARCHIVOS ---
+    Serial.println("Montando sistema de archivos...");
+    if (LittleFS.begin()) {
+        Serial.println("FS montado");
+        if (LittleFS.exists("/config.json")) {
+            // Si existe el archivo, leemos la configuración
+            File configFile = LittleFS.open("/config.json", "r");
+            if (configFile) {
+                size_t size = configFile.size();
+                std::unique_ptr<char[]> buf(new char[size]);
+                configFile.readBytes(buf.get(), size);
+                
+                DynamicJsonDocument json(1024);
+                DeserializationError error = deserializeJson(json, buf.get());
+                if (!error) {
+                    // Cargamos los valores guardados a las variables
+                    strcpy(mqtt_server, json["mqtt_server"]);
+                    strcpy(mqtt_port, json["mqtt_port"]);
+                    Serial.println("Configuración MQTT cargada:");
+                    Serial.println(mqtt_server);
+                }
+            }
+        }
+    } else {
+        Serial.println("Fallo al montar FS");
+    }
+    // ---------------------------------------------
 
+    pinMode(LED_PIN, OUTPUT);
     setupSensors();
 
+    // --- CONFIGURACIÓN WIFIMANAGER ---
     WiFiManager wifiManager;
-    wifiManager.setAPCallback([](WiFiManager *myWiFiManager) {
-        digitalWrite(LED_PIN, LOW);
-    });
-    wifiManager.setTimeout(180); 
-    if(!wifiManager.autoConnect("Dango_Config")) {
-        ESP.reset(); delay(1000);
-    }
-    digitalWrite(LED_PIN, HIGH); 
 
-    client.setServer(MQTT_SERVER, MQTT_PORT);
+    // 1. Definir los parámetros personalizados
+    // (id, label, default_value, length)
+    WiFiManagerParameter custom_mqtt_server("server", "MQTT Server IP", mqtt_server, 40);
+    WiFiManagerParameter custom_mqtt_port("port", "MQTT Port", mqtt_port, 6);
+
+    // 2. Añadir los parámetros al portal
+    wifiManager.addParameter(&custom_mqtt_server);
+    wifiManager.addParameter(&custom_mqtt_port);
+    
+    // 3. Configurar callback de guardado
+    wifiManager.setSaveConfigCallback(saveConfigCallback);
+
+    wifiManager.setTimeout(180); 
+    
+    // Si no conecta, levanta el portal AP
+    if(!wifiManager.autoConnect("Dango_Config")) {
+        Serial.println("Fallo conexión, reiniciando...");
+        delay(1000);
+        ESP.reset();
+    }
+
+    // --- SI LLEGAMOS AQUÍ, ESTAMOS CONECTADOS ---
+    
+    // Leemos los valores actualizados del portal (si hubo cambios)
+    strcpy(mqtt_server, custom_mqtt_server.getValue());
+    strcpy(mqtt_port, custom_mqtt_port.getValue());
+
+    // --- GUARDADO EN MEMORIA (si se modificó algo) ---
+    if (shouldSaveConfig) {
+        Serial.println("Guardando configuración...");
+        DynamicJsonDocument json(1024);
+        json["mqtt_server"] = mqtt_server;
+        json["mqtt_port"] = mqtt_port;
+
+        File configFile = LittleFS.open("/config.json", "w");
+        if (!configFile) {
+            Serial.println("Fallo al abrir archivo para escribir");
+        } else {
+            serializeJson(json, configFile);
+            configFile.close();
+            Serial.println("Configuración guardada en FS");
+        }
+    }
+
+    // Usar las variables dinámicas en lugar de las constantes
+    // IMPORTANTE: Convierte el puerto a int
+    client.setServer(mqtt_server, atoi(mqtt_port)); 
     client.setCallback(mqttCallback);
-    // Configurar buffer antes de conectar
-    client.setBufferSize(4096); 
+    client.setBufferSize(4096);
 
     runner.init();
     runner.addTask(tRead); runner.addTask(tPublish); runner.addTask(tWatchdog); runner.addTask(tErrorBlink);

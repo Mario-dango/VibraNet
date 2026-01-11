@@ -161,6 +161,7 @@
         "id": "7e1d5ca265512a6b",
         "type": "group",
         "z": "a9c03d3f35ffc9ac",
+        "g": "fa66d27ce52ebef8",
         "style": {
             "stroke": "#999999",
             "stroke-opacity": "1",
@@ -177,10 +178,208 @@
             "be14835c57a215df",
             "06605f8e02bac5d1"
         ],
-        "x": 874,
-        "y": 79,
+        "x": 754,
+        "y": 399,
         "w": 432,
         "h": 202
+    },
+    {
+        "id": "2cbb2c553332cecf",
+        "type": "group",
+        "z": "a9c03d3f35ffc9ac",
+        "g": "fa66d27ce52ebef8",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "57236e125be2024a",
+            "1e0e8f64a7fcd916",
+            "59f25368bcf54c11",
+            "71fa786e57853469",
+            "ba1e07961790fe95",
+            "4f96ab737eb020f3",
+            "701b4ce540752138",
+            "a3f00c5db5df8dd0",
+            "f726ae231431eeb1",
+            "c195bb0a570f523d"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 832,
+        "h": 342
+    },
+    {
+        "id": "122afeb919a183e4",
+        "type": "group",
+        "z": "a9c03d3f35ffc9ac",
+        "g": "fa66d27ce52ebef8",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "f2421d1ef4b89190",
+            "9eeee0e274d32168",
+            "5e640489b988d2fe",
+            "0ca69972959b9dc0",
+            "86afb246e079d599",
+            "6399ca87be6ab825",
+            "52cbafdb3895e3f3",
+            "88febb1cfee458f3",
+            "4471affe242e64a1",
+            "d81f6c34f1ecc6b9",
+            "9ffc3e546d4afb89"
+        ],
+        "x": 54,
+        "y": 399,
+        "w": 692,
+        "h": 382
+    },
+    {
+        "id": "fa66d27ce52ebef8",
+        "type": "group",
+        "z": "a9c03d3f35ffc9ac",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "122afeb919a183e4",
+            "7e1d5ca265512a6b",
+            "2cbb2c553332cecf"
+        ],
+        "x": 8,
+        "y": 13,
+        "w": 1204,
+        "h": 794
+    },
+    {
+        "id": "8f868f30c676489b",
+        "type": "group",
+        "z": "b29ae43622fe4a42",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "80c5c3aaa67e3d31",
+            "a8fe8d0d973d7d31",
+            "b9f03678be164fb8"
+        ],
+        "x": 28,
+        "y": 2253,
+        "w": 1204,
+        "h": 794
+    },
+    {
+        "id": "80c5c3aaa67e3d31",
+        "type": "group",
+        "z": "b29ae43622fe4a42",
+        "g": "8f868f30c676489b",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "5f73127da05845a7",
+            "5cbd0fce456d6519",
+            "c48b76fe3521b5a6",
+            "2e32e267677049d6",
+            "dce61332ed6bd359",
+            "41f52af1f2fb3ede",
+            "cab56f2ab8f4aa88",
+            "2f5e2054dc4d78a7",
+            "e22acfce02a02bf0",
+            "c5a08c29b2745120",
+            "fb7edfc5f890017b"
+        ],
+        "x": 74,
+        "y": 2639,
+        "w": 692,
+        "h": 382
+    },
+    {
+        "id": "a8fe8d0d973d7d31",
+        "type": "group",
+        "z": "b29ae43622fe4a42",
+        "g": "8f868f30c676489b",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "728af048d7ebc9c2",
+            "139a42e0938668d2",
+            "70ee880815bddad7",
+            "2bc2e8752f0564d8",
+            "c18e492096778d2e"
+        ],
+        "x": 774,
+        "y": 2639,
+        "w": 432,
+        "h": 202
+    },
+    {
+        "id": "b9f03678be164fb8",
+        "type": "group",
+        "z": "b29ae43622fe4a42",
+        "g": "8f868f30c676489b",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "379542d0dd008544",
+            "d60bf95d6d28dd3e",
+            "6245eef443f178c0",
+            "c84f5c567a7b8738",
+            "199ea7b483270848",
+            "6ef334cfa7bccc08",
+            "47858b525d9b5354",
+            "d07154e1b8828cac",
+            "ab6a6611fc9d412a",
+            "c5f9c0ad31d527bf"
+        ],
+        "x": 54,
+        "y": 2279,
+        "w": 832,
+        "h": 342
     },
     {
         "id": "56983aab46619dc7",
@@ -252,6 +451,7 @@
         "id": "57236e125be2024a",
         "type": "debug",
         "z": "a9c03d3f35ffc9ac",
+        "g": "2cbb2c553332cecf",
         "name": "RMS, Peak, crest, kurt, vel",
         "active": false,
         "tosidebar": true,
@@ -261,14 +461,15 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 300,
+        "x": 700,
+        "y": 320,
         "wires": []
     },
     {
         "id": "1e0e8f64a7fcd916",
         "type": "mqtt in",
         "z": "a9c03d3f35ffc9ac",
+        "g": "2cbb2c553332cecf",
         "name": "",
         "topic": "vibranet/data",
         "qos": "2",
@@ -278,8 +479,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 90,
-        "y": 120,
+        "x": 130,
+        "y": 140,
         "wires": [
             [
                 "59f25368bcf54c11",
@@ -291,12 +492,13 @@
         "id": "59f25368bcf54c11",
         "type": "json",
         "z": "a9c03d3f35ffc9ac",
+        "g": "2cbb2c553332cecf",
         "name": "",
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 110,
-        "y": 220,
+        "x": 150,
+        "y": 240,
         "wires": [
             [
                 "4f96ab737eb020f3",
@@ -308,20 +510,22 @@
         "id": "71fa786e57853469",
         "type": "comment",
         "z": "a9c03d3f35ffc9ac",
+        "g": "2cbb2c553332cecf",
         "name": "probando nuevo pallet que funciona",
         "info": "",
-        "x": 400,
-        "y": 60,
+        "x": 440,
+        "y": 80,
         "wires": []
     },
     {
         "id": "ba1e07961790fe95",
         "type": "Stackhero-InfluxDB-v2-write",
         "z": "a9c03d3f35ffc9ac",
+        "g": "2cbb2c553332cecf",
         "server": "98e8ab9a245e34a9",
         "name": "influxdb",
-        "x": 620,
-        "y": 240,
+        "x": 660,
+        "y": 260,
         "wires": [
             []
         ]
@@ -330,6 +534,7 @@
         "id": "4f96ab737eb020f3",
         "type": "function",
         "z": "a9c03d3f35ffc9ac",
+        "g": "2cbb2c553332cecf",
         "name": "Split+Tag",
         "func": "// --- 1. PREPARACIÓN DE DATOS ---\nvar inputData = msg.payload;\n\n// Aseguramos que sea un objeto JSON\nif (typeof inputData === \"string\") {\n    try { inputData = JSON.parse(inputData); } catch (e) { return null; }\n}\n\nvar nodeId = inputData.id || \"unknown\";\n\n// --- 2. FILTRO DE SEGURIDAD ---\nvar validSensors = [\"Dango_Node_001\", \"Dango_Node_002\", \"Telescopio_01\", \"Industria_SRO\", \"Industria_Node_01\"]; \nif (!validSensors.includes(nodeId)) {\n    return null; \n}\n\n// --- 3. CONTEXTO Y TAGS ---\nvar clientName = \"Dango_Prototype\";\nvar locationName = \"Lab_General\";\nvar ssid = inputData.wifi || \"Desconocida\"; // Capturamos el SSID\n\nif (nodeId === \"Dango_Node_001\" || nodeId === \"Telescopio_01\") {\n    clientName = \"Observatorio_Nacional\";\n    locationName = \"Base_Acimutal\";\n} else if (nodeId === \"Dango_Node_002\") {\n    clientName = \"Industria_SRO\";\n    locationName = \"Cinta_Transportadora\";\n} else if (nodeId === \"Industria_Node_01\") {\n    clientName = \"Industria_SRO\";\n    locationName = \"Motor_Compresor_A\";\n}\n\n// --- 4. CONSTRUCCIÓN PARA STACKHERO INFLUXDB ---\nvar dataPoints = [];\n\n// Capturamos el voltaje global del nodo\nvar voltage = parseFloat(inputData.vcc) || 0.0;\n\n// Función auxiliar para crear el objeto de dato\nfunction createPoint(sensorCode, d) {\n    return {\n        measurement: 'vibration_sensor', // Seguimos usando la misma tabla\n        tags: {\n            client: clientName,\n            location: locationName,\n            node: nodeId,\n            sensor: sensorCode,\n            redSSID: ssid,        // <--- NUEVO TAG: Tu red WiFi (PAPETTI)\n            hw_ver: '1.5',\n            sw_ver: '2.5.1'\n        },\n        fields: {\n            ax: parseFloat(d.ax),\n            ay: parseFloat(d.ay),\n            az: parseFloat(d.az),\n            mag_acc: parseFloat(Math.sqrt(d.ax*d.ax + d.ay*d.ay + d.az*d.az).toFixed(4)),\n            \n            // <--- AQUÍ ESTÁ LA MAGIA: Agregamos el voltaje como dato\n            vcc: voltage \n        },\n        timestamp: Date.now()\n    };\n}\n\n// Procesamos s1 y s2 si existen\nif (inputData.s1) dataPoints.push(createPoint(\"s1\", inputData.s1));\nif (inputData.s2) dataPoints.push(createPoint(\"s2\", inputData.s2));\n\n// Si no hay datos validos, salir\nif (dataPoints.length === 0) return null;\n\n// --- 5. SALIDA FINAL ---\nmsg.payload = {\n    bucket: 'Vibranet_data', \n    precision: 'ms',         \n    data: dataPoints         \n};\n\nreturn msg;",
         "outputs": 1,
@@ -338,8 +543,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 120,
+        "x": 440,
+        "y": 140,
         "wires": [
             [
                 "c195bb0a570f523d",
@@ -351,6 +556,7 @@
         "id": "701b4ce540752138",
         "type": "debug",
         "z": "a9c03d3f35ffc9ac",
+        "g": "2cbb2c553332cecf",
         "name": "debug 2",
         "active": false,
         "tosidebar": true,
@@ -359,14 +565,15 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 360,
-        "y": 320,
+        "x": 400,
+        "y": 340,
         "wires": []
     },
     {
         "id": "f2421d1ef4b89190",
         "type": "inject",
         "z": "a9c03d3f35ffc9ac",
+        "g": "122afeb919a183e4",
         "name": "tiempo ventana sensado",
         "props": [
             {
@@ -384,8 +591,8 @@
         "topic": "",
         "payload": "100",
         "payloadType": "num",
-        "x": 190,
-        "y": 440,
+        "x": 210,
+        "y": 480,
         "wires": [
             [
                 "9eeee0e274d32168"
@@ -396,6 +603,7 @@
         "id": "9eeee0e274d32168",
         "type": "mqtt out",
         "z": "a9c03d3f35ffc9ac",
+        "g": "122afeb919a183e4",
         "name": "",
         "topic": "vibranet/config/Dango_Node_001",
         "qos": "2",
@@ -406,24 +614,26 @@
         "correl": "",
         "expiry": "",
         "broker": "56983aab46619dc7",
-        "x": 560,
-        "y": 440,
+        "x": 580,
+        "y": 480,
         "wires": []
     },
     {
         "id": "5e640489b988d2fe",
         "type": "comment",
         "z": "a9c03d3f35ffc9ac",
+        "g": "122afeb919a183e4",
         "name": "flujo configura ventana de muestreo",
         "info": "",
-        "x": 320,
-        "y": 400,
+        "x": 340,
+        "y": 440,
         "wires": []
     },
     {
         "id": "a3f00c5db5df8dd0",
         "type": "function",
         "z": "a9c03d3f35ffc9ac",
+        "g": "2cbb2c553332cecf",
         "name": "49 data",
         "func": "// CONFIGURACIÓN\nvar WINDOW_SIZE = 50; // Muestras por ventana\n\n// Factor de conversión: 1 G = 9806.65 mm/s²\n// Para pasar a mm/s al integrar, usamos este factor.\nvar G_TO_MM_S2 = 9806.65;\n\nvar bufferState = flow.get('sensorBuffer') || {}; \n\n// --- FUNCIÓN MATEMÁTICA AVANZADA ---\nfunction calculateComplexMetrics(arr, durationSeconds) {\n    if (arr.length === 0) return null;\n    \n    var n = arr.length;\n    var dt = durationSeconds / n; // Tiempo estimado entre cada muestra\n    \n    // 1. Estadísticas Básicas (Media, Min, Max)\n    var min = Infinity;\n    var max = -Infinity;\n    var sum = 0;\n    \n    for (var i = 0; i < n; i++) {\n        var val = arr[i];\n        if (val < min) min = val;\n        if (val > max) max = val;\n        sum += val;\n    }\n    var mean = sum / n; // Esto representa el componente DC (Gravedad o Offset)\n\n    // 2. Momentos Estadísticos (RMS, Kurtosis)\n    var sumSqDiff = 0;   // Para Varianza/RMS AC\n    var sum4thDiff = 0;  // Para Kurtosis\n    \n    for (var i = 0; i < n; i++) {\n        var diff = arr[i] - mean; // Restamos la media para analizar solo la vibración AC\n        var sq = diff * diff;\n        sumSqDiff += sq;\n        sum4thDiff += sq * sq;\n    }\n    \n    var variance = sumSqDiff / n;\n    var stdev = Math.sqrt(variance); // Desviación estándar\n    var rms = Math.sqrt((sumSqDiff / n) + (mean*mean)); // RMS Real (incluye DC)\n    \n    // Cálculo de Kurtosis (Cuarto momento normalizado)\n    // Una onda senoidal pura tiene Kurtosis ~1.5. Golpes suben esto a >3.\n    var kurtosis = 0;\n    if (variance !== 0) {\n        kurtosis = (sum4thDiff / n) / (variance * variance);\n    }\n\n    var peak = Math.max(Math.abs(min), Math.abs(max));\n    var crestFactor = (rms !== 0) ? (peak / rms) : 0;\n\n    // 3. CÁLCULO DE VELOCIDAD (Integración Numérica)\n    // Convertimos Aceleración (G) a Velocidad (mm/s)\n    // Usamos integración trapezoidal removiendo el componente DC (Gravedad)\n    var velocitySumSq = 0;\n    var currentVel = 0;\n    \n    for (var i = 0; i < n - 1; i++) {\n        // Aceleración en este punto y el siguiente (en G), quitando gravedad (mean)\n        var a1 = (arr[i] - mean); \n        var a2 = (arr[i+1] - mean);\n        \n        // Área del trapecio = Promedio de altura * base (dt)\n        // Resultado en G*s. Multiplicamos por 9806.65 para mm/s\n        var area = ((a1 + a2) / 2) * dt * G_TO_MM_S2;\n        \n        currentVel += area; // Integramos\n        velocitySumSq += currentVel * currentVel;\n    }\n    \n    // RMS de la Velocidad (El valor que pide la norma ISO 10816)\n    var velocityRMS = Math.sqrt(velocitySumSq / (n - 1));\n\n    return {\n        rms: parseFloat(rms.toFixed(4)),\n        peak: parseFloat(peak.toFixed(4)),\n        crest: parseFloat(crestFactor.toFixed(4)),\n        kurtosis: parseFloat(kurtosis.toFixed(4)),\n        velocity_mm_s: parseFloat(velocityRMS.toFixed(4)) // <--- EL DATO NUEVO\n    };\n}\n\n// --- LOGICA PRINCIPAL ---\nvar inputData = msg.payload;\nif (typeof inputData === \"string\") {\n    try { inputData = JSON.parse(inputData); } catch(e) {}\n}\n\nvar nodeId = inputData.id || \"unknown\";\nvar validSensors = [\"Dango_Node_001\", \"Dango_Node_002\", \"Telescopio_01\", \"Industria_SRO\"];\nif (!validSensors.includes(nodeId)) return null;\n\n// Inicializar buffers con MARCA DE TIEMPO\nif (!bufferState[nodeId]) {\n    bufferState[nodeId] = { \n        s1_ax:[], s1_ay:[], s1_az:[], \n        s2_ax:[], s2_ay:[], s2_az:[], \n        startTime: Date.now(), // <--- Guardamos cuándo empezó a llenarse\n        count: 0 \n    };\n}\n\nvar buf = bufferState[nodeId];\n\n// Llenar Buffer\nif (inputData.s1) {\n    buf.s1_ax.push(parseFloat(inputData.s1.ax));\n    buf.s1_ay.push(parseFloat(inputData.s1.ay));\n    buf.s1_az.push(parseFloat(inputData.s1.az));\n}\nif (inputData.s2) {\n    buf.s2_ax.push(parseFloat(inputData.s2.ax));\n    buf.s2_ay.push(parseFloat(inputData.s2.ay));\n    buf.s2_az.push(parseFloat(inputData.s2.az));\n}\n\nbuf.count++;\n\n// ¿Está lleno el buffer?\nif (buf.count >= WINDOW_SIZE) {\n    \n    var endTime = Date.now();\n    // Calculamos duración real de la ráfaga en SEGUNDOS\n    var duration = (endTime - buf.startTime) / 1000; \n    \n    // Evitar división por cero si llega todo instantáneo\n    if (duration <= 0) duration = 0.05; \n\n    var dataPoints = [];\n    var timestamp = endTime;\n    \n    var clientName = \"Dango_Prototype\";\n    var locationName = \"Lab_General\";\n    if (nodeId === \"Dango_Node_001\") { clientName = \"Observatorio_Nacional\"; locationName = \"Base_Acimutal\"; }\n    else if (nodeId === \"Dango_Node_002\") { clientName = \"Industria_SRO\"; locationName = \"Cinta_Transportadora\"; }\n    \n    // Procesar S1\n    if (buf.s1_ax.length > 0) {\n        var mX = calculateComplexMetrics(buf.s1_ax, duration);\n        var mY = calculateComplexMetrics(buf.s1_ay, duration);\n        var mZ = calculateComplexMetrics(buf.s1_az, duration);\n        \n        // Magnitud vectorial de la velocidad\n        var vel_mag = Math.sqrt(mX.velocity_mm_s*mX.velocity_mm_s + mY.velocity_mm_s*mY.velocity_mm_s + mZ.velocity_mm_s*mZ.velocity_mm_s).toFixed(4);\n\n        dataPoints.push({\n            measurement: 'vibration_analysis',\n            tags: { \n                client: clientName, \n                location: locationName, \n                node: nodeId, \n                sensor: \"s1\", \n                type: \"advanced_stats\" },\n            fields: {\n                // Datos existentes\n                rms_x: mX.rms, peak_x: mX.peak, crest_x: mX.crest,\n                rms_y: mY.rms, peak_y: mY.peak, crest_y: mY.crest,\n                rms_z: mZ.rms, peak_z: mZ.peak, crest_z: mZ.crest,\n                \n                // --- NUEVOS DATOS ---\n                kurt_x: mX.kurtosis,\n                kurt_y: mY.kurtosis,\n                kurt_z: mZ.kurtosis,\n                \n                vel_x: mX.velocity_mm_s,\n                vel_y: mY.velocity_mm_s,\n                vel_z: mZ.velocity_mm_s,\n                vel_mag: parseFloat(vel_mag) // <--- ISO 10816 INDICATOR\n            },\n            timestamp: timestamp\n        });\n    }\n\n    // Procesar S2 (Igual que S1)\n    if (buf.s2_ax.length > 0) {\n        var mX2 = calculateComplexMetrics(buf.s2_ax, duration);\n        var mY2 = calculateComplexMetrics(buf.s2_ay, duration);\n        var mZ2 = calculateComplexMetrics(buf.s2_az, duration);\n        var vel_mag2 = Math.sqrt(mX2.velocity_mm_s*mX2.velocity_mm_s + mY2.velocity_mm_s*mY2.velocity_mm_s + mZ2.velocity_mm_s*mZ2.velocity_mm_s).toFixed(4);\n\n        dataPoints.push({\n            measurement: 'vibration_analysis',\n            tags: { client: clientName, location: locationName, node: nodeId, sensor: \"s2\", type: \"advanced_stats\" },\n            fields: {\n                rms_x: mX2.rms, peak_x: mX2.peak, crest_x: mX2.crest,\n                rms_y: mY2.rms, peak_y: mY2.peak, crest_y: mY2.crest,\n                rms_z: mZ2.rms, peak_z: mZ2.peak, crest_z: mZ2.crest,\n                kurt_x: mX2.kurtosis, kurt_y: mY2.kurtosis, kurt_z: mZ2.kurtosis,\n                vel_x: mX2.velocity_mm_s, vel_y: mY2.velocity_mm_s, vel_z: mZ2.velocity_mm_s,\n                vel_mag: parseFloat(vel_mag2)\n            },\n            timestamp: timestamp\n        });\n    }\n\n    // Reset Buffer\n    bufferState[nodeId] = { \n        s1_ax:[], s1_ay:[], s1_az:[], \n        s2_ax:[], s2_ay:[], s2_az:[], \n        startTime: Date.now(), // Reiniciamos reloj\n        count: 0 \n    };\n    flow.set('sensorBuffer', bufferState); \n\n    msg.payload = { bucket: 'Vibranet_data', precision: 'ms', data: dataPoints };\n    return msg;\n\n} else {\n    flow.set('sensorBuffer', bufferState);\n    return null; \n}",
         "outputs": 1,
@@ -432,8 +642,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 240,
+        "x": 420,
+        "y": 260,
         "wires": [
             [
                 "ba1e07961790fe95",
@@ -445,8 +655,9 @@
         "id": "f726ae231431eeb1",
         "type": "debug",
         "z": "a9c03d3f35ffc9ac",
+        "g": "2cbb2c553332cecf",
         "name": "ax, ay, az, magnitud",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -454,18 +665,19 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 180,
+        "x": 680,
+        "y": 200,
         "wires": []
     },
     {
         "id": "c195bb0a570f523d",
         "type": "Stackhero-InfluxDB-v2-write",
         "z": "a9c03d3f35ffc9ac",
+        "g": "2cbb2c553332cecf",
         "server": "98e8ab9a245e34a9",
         "name": "influxdb",
-        "x": 620,
-        "y": 120,
+        "x": 660,
+        "y": 140,
         "wires": [
             []
         ]
@@ -474,6 +686,7 @@
         "id": "0ca69972959b9dc0",
         "type": "inject",
         "z": "a9c03d3f35ffc9ac",
+        "g": "122afeb919a183e4",
         "name": "",
         "props": [
             {
@@ -491,8 +704,8 @@
         "topic": "",
         "payload": "BURST",
         "payloadType": "str",
-        "x": 130,
-        "y": 580,
+        "x": 150,
+        "y": 620,
         "wires": [
             [
                 "86afb246e079d599"
@@ -503,6 +716,7 @@
         "id": "86afb246e079d599",
         "type": "mqtt out",
         "z": "a9c03d3f35ffc9ac",
+        "g": "122afeb919a183e4",
         "name": "",
         "topic": "vibranet/config/Dango_Node_001",
         "qos": "2",
@@ -513,14 +727,15 @@
         "correl": "",
         "expiry": "",
         "broker": "56983aab46619dc7",
-        "x": 460,
-        "y": 580,
+        "x": 480,
+        "y": 620,
         "wires": []
     },
     {
         "id": "6399ca87be6ab825",
         "type": "mqtt in",
         "z": "a9c03d3f35ffc9ac",
+        "g": "122afeb919a183e4",
         "name": "",
         "topic": "vibranet/burst",
         "qos": "2",
@@ -530,8 +745,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 150,
-        "y": 640,
+        "x": 170,
+        "y": 680,
         "wires": [
             [
                 "52cbafdb3895e3f3",
@@ -543,6 +758,7 @@
         "id": "52cbafdb3895e3f3",
         "type": "debug",
         "z": "a9c03d3f35ffc9ac",
+        "g": "122afeb919a183e4",
         "name": "BRUST MODE",
         "active": true,
         "tosidebar": true,
@@ -552,14 +768,15 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 360,
-        "y": 700,
+        "x": 380,
+        "y": 740,
         "wires": []
     },
     {
         "id": "88febb1cfee458f3",
         "type": "function",
         "z": "a9c03d3f35ffc9ac",
+        "g": "122afeb919a183e4",
         "name": "FFT magic",
         "func": "// --- CONFIGURACIÓN ---\n// Ignoramos frecuencias muy bajas (Gravedad/DC)\nvar MIN_FREQ_HZ = 2.0; \n\n// --- ALGORITMO FFT (Cooley-Tukey) ---\nfunction fft(amplitudes) {\n    var N = amplitudes.length;\n    if (N <= 1) return amplitudes;\n\n    var hN = N / 2;\n    var even = [];\n    var odd = [];\n    \n    // Divide (Separar pares e impares)\n    for (var i = 0; i < hN; i++) {\n        even[i] = amplitudes[2 * i];\n        odd[i] = amplitudes[2 * i + 1];\n    }\n    \n    // Conquer (Recursividad)\n    even = fft(even);\n    odd = fft(odd);\n\n    var a = -2 * Math.PI;\n    var result = new Array(N); \n    \n    // Combine\n    for (var k = 0; k < hN; k++) {\n        // Multiplicador complejo (Twiddle factor)\n        // Nota: Como la entrada es real puros, simplificamos un poco, \n        // pero necesitamos manejo complejo completo para la salida.\n        // Aquí asumimos entrada compleja {re, im} para simplificar la recursión.\n        \n        // Pero espera, para no complicar con clases complejas en Node-RED,\n        // usaremos una implementación iterativa optimizada in-place.\n        // (Ver abajo implementation real)\n    }\n    return []; // Placeholder\n}\n\n// --- IMPLEMENTACIÓN ROBUSTA FFT IN-PLACE ---\nfunction runFFT(data) {\n    var n = data.length;\n    var m = Math.log2(n);\n    \n    // Bit-reversal\n    var i, j, k;\n    var re = new Array(n);\n    var im = new Array(n);\n    \n    for(i=0; i<n; i++) {\n        re[i] = data[i];\n        im[i] = 0.0;\n    }\n    \n    j = 0;\n    for (i = 0; i < n - 1; i++) {\n        if (i < j) {\n            var tr = re[i]; re[i] = re[j]; re[j] = tr;\n            var ti = im[i]; im[i] = im[j]; im[j] = ti;\n        }\n        k = n >> 1;\n        while (k <= j) { j -= k; k >>= 1; }\n        j += k;\n    }\n    \n    // Butterfly\n    var le, le2, ur, ui, sr, si, tr, ti;\n    for (var l = 1; l <= m; l++) {\n        le = 1 << l;\n        le2 = le >> 1;\n        ur = 1.0;\n        ui = 0.0;\n        sr = Math.cos(Math.PI / le2);\n        si = -Math.sin(Math.PI / le2); // FFT Forward\n        \n        for (j = 0; j < le2; j++) {\n            for (i = j; i < n; i += le) {\n                var ip = i + le2;\n                tr = re[ip] * ur - im[ip] * ui;\n                ti = re[ip] * ui + im[ip] * ur;\n                re[ip] = re[i] - tr;\n                im[ip] = im[i] - ti;\n                re[i] = re[i] + tr;\n                im[i] = im[i] + ti;\n            }\n            tr = ur;\n            ur = tr * sr - ui * si;\n            ui = tr * si + ui * sr;\n        }\n    }\n    \n    // Calcular Magnitud\n    var mags = [];\n    // Solo necesitamos la primera mitad (Nyquist)\n    for(i=0; i < n/2; i++) {\n        mags.push(Math.sqrt(re[i]*re[i] + im[i]*im[i]));\n    }\n    return mags;\n}\n\n// --- PROCESAMIENTO PRINCIPAL ---\nvar msgData = msg.payload;\n\n// Validación\nif (!msgData.data || !Array.isArray(msgData.data) || !msgData.fs) return null;\n\nvar timeData = msgData.data;\nvar fs = msgData.fs; // 500 Hz\nvar N = timeData.length; // 256\n\n// 1. Ejecutar FFT\nvar magnitudes = runFFT(timeData);\n\n// 2. Mapear Índices a Frecuencias\n// Resolución = Fs / N = 500 / 256 = 1.95 Hz por bin\nvar spectrum = [];\nvar resolution = fs / N;\n\nfor (var i = 0; i < magnitudes.length; i++) {\n    var freq = i * resolution;\n    // Filtro Pasa Altos (Ignorar DC/Gravedad)\n    if (freq > MIN_FREQ_HZ) {\n        spectrum.push({ f: parseFloat(freq.toFixed(2)), m: parseFloat(magnitudes[i].toFixed(2)) });\n    }\n}\n\n// 3. Encontrar los 3 picos más altos\nspectrum.sort(function(a, b) { return b.m - a.m; }); // Ordenar descendente por magnitud\n\nvar top3 = spectrum.slice(0, 3);\n\n// Si no hay picos (señal plana), rellenar con ceros\nwhile(top3.length < 3) { top3.push({f:0, m:0}); }\n\n// --- PREPARAR SALIDA INFLUXDB ---\n// Usaremos un measurement nuevo: 'vibration_spectrum'\n// Guardaremos las 3 frecuencias principales y sus magnitudes\n\nmsg.payload = {\n    bucket: 'Vibranet_data',\n    precision: 'ms',\n    data: [\n        {\n            measurement: 'vibration_spectrum',\n            tags: {\n                node: msgData.id,\n                sensor: msgData.sensor,\n                type: 'fft_peaks'\n            },\n            fields: {\n                f1_hz: top3[0].f, f1_mag: top3[0].m,\n                f2_hz: top3[1].f, f2_mag: top3[1].m,\n                f3_hz: top3[2].f, f3_mag: top3[2].m,\n                total_energy: magnitudes.reduce((a, b) => a + b, 0).toFixed(2) // Energía total aprox\n            },\n            timestamp: Date.now()\n        }\n    ]\n};\n\nreturn msg;",
         "outputs": 1,
@@ -568,8 +785,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 350,
-        "y": 640,
+        "x": 370,
+        "y": 680,
         "wires": [
             [
                 "d81f6c34f1ecc6b9"
@@ -580,6 +797,7 @@
         "id": "4471affe242e64a1",
         "type": "debug",
         "z": "a9c03d3f35ffc9ac",
+        "g": "122afeb919a183e4",
         "name": "frecuencias",
         "active": false,
         "tosidebar": true,
@@ -589,18 +807,19 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 610,
-        "y": 700,
+        "x": 630,
+        "y": 740,
         "wires": []
     },
     {
         "id": "d81f6c34f1ecc6b9",
         "type": "Stackhero-InfluxDB-v2-write",
         "z": "a9c03d3f35ffc9ac",
+        "g": "122afeb919a183e4",
         "server": "98e8ab9a245e34a9",
         "name": "influxdb",
-        "x": 540,
-        "y": 640,
+        "x": 560,
+        "y": 680,
         "wires": [
             [
                 "4471affe242e64a1"
@@ -611,10 +830,11 @@
         "id": "9ffc3e546d4afb89",
         "type": "comment",
         "z": "a9c03d3f35ffc9ac",
+        "g": "122afeb919a183e4",
         "name": "Modo Burst para FFT",
         "info": "",
-        "x": 280,
-        "y": 520,
+        "x": 300,
+        "y": 560,
         "wires": []
     },
     {
@@ -630,8 +850,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1020,
-        "y": 240,
+        "x": 900,
+        "y": 560,
         "wires": [
             [
                 "06605f8e02bac5d1",
@@ -646,8 +866,8 @@
         "g": "7e1d5ca265512a6b",
         "name": "Simulador de Nodo",
         "info": "",
-        "x": 1090,
-        "y": 120,
+        "x": 970,
+        "y": 440,
         "wires": []
     },
     {
@@ -672,8 +892,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 990,
-        "y": 180,
+        "x": 870,
+        "y": 500,
         "wires": [
             [
                 "06605f8e02bac5d1"
@@ -694,8 +914,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1200,
-        "y": 240,
+        "x": 1080,
+        "y": 560,
         "wires": []
     },
     {
@@ -713,8 +933,8 @@
         "correl": "",
         "expiry": "",
         "broker": "56983aab46619dc7",
-        "x": 1210,
-        "y": 180,
+        "x": 1090,
+        "y": 500,
         "wires": []
     },
     {
@@ -1846,6 +2066,532 @@
         "info": "",
         "x": 1030,
         "y": 240,
+        "wires": []
+    },
+    {
+        "id": "5f73127da05845a7",
+        "type": "inject",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "80c5c3aaa67e3d31",
+        "name": "tiempo ventana sensado",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "100",
+        "payloadType": "num",
+        "x": 230,
+        "y": 2720,
+        "wires": [
+            [
+                "5cbd0fce456d6519"
+            ]
+        ]
+    },
+    {
+        "id": "5cbd0fce456d6519",
+        "type": "mqtt out",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "80c5c3aaa67e3d31",
+        "name": "",
+        "topic": "vibranet/config/Dango_Node_001",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "56983aab46619dc7",
+        "x": 600,
+        "y": 2720,
+        "wires": []
+    },
+    {
+        "id": "c48b76fe3521b5a6",
+        "type": "comment",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "80c5c3aaa67e3d31",
+        "name": "flujo configura ventana de muestreo",
+        "info": "",
+        "x": 360,
+        "y": 2680,
+        "wires": []
+    },
+    {
+        "id": "2e32e267677049d6",
+        "type": "inject",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "80c5c3aaa67e3d31",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "BURST",
+        "payloadType": "str",
+        "x": 170,
+        "y": 2860,
+        "wires": [
+            [
+                "dce61332ed6bd359"
+            ]
+        ]
+    },
+    {
+        "id": "dce61332ed6bd359",
+        "type": "mqtt out",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "80c5c3aaa67e3d31",
+        "name": "",
+        "topic": "vibranet/config/Dango_Node_001",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "56983aab46619dc7",
+        "x": 500,
+        "y": 2860,
+        "wires": []
+    },
+    {
+        "id": "41f52af1f2fb3ede",
+        "type": "mqtt in",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "80c5c3aaa67e3d31",
+        "name": "",
+        "topic": "vibranet/burst",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56983aab46619dc7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 2920,
+        "wires": [
+            [
+                "cab56f2ab8f4aa88",
+                "2f5e2054dc4d78a7"
+            ]
+        ]
+    },
+    {
+        "id": "cab56f2ab8f4aa88",
+        "type": "debug",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "80c5c3aaa67e3d31",
+        "name": "BRUST MODE",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 2980,
+        "wires": []
+    },
+    {
+        "id": "2f5e2054dc4d78a7",
+        "type": "function",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "80c5c3aaa67e3d31",
+        "name": "FFT magic",
+        "func": "// --- CONFIGURACIÓN ---\n// Ignoramos frecuencias muy bajas (Gravedad/DC)\nvar MIN_FREQ_HZ = 2.0; \n\n// --- ALGORITMO FFT (Cooley-Tukey) ---\nfunction fft(amplitudes) {\n    var N = amplitudes.length;\n    if (N <= 1) return amplitudes;\n\n    var hN = N / 2;\n    var even = [];\n    var odd = [];\n    \n    // Divide (Separar pares e impares)\n    for (var i = 0; i < hN; i++) {\n        even[i] = amplitudes[2 * i];\n        odd[i] = amplitudes[2 * i + 1];\n    }\n    \n    // Conquer (Recursividad)\n    even = fft(even);\n    odd = fft(odd);\n\n    var a = -2 * Math.PI;\n    var result = new Array(N); \n    \n    // Combine\n    for (var k = 0; k < hN; k++) {\n        // Multiplicador complejo (Twiddle factor)\n        // Nota: Como la entrada es real puros, simplificamos un poco, \n        // pero necesitamos manejo complejo completo para la salida.\n        // Aquí asumimos entrada compleja {re, im} para simplificar la recursión.\n        \n        // Pero espera, para no complicar con clases complejas en Node-RED,\n        // usaremos una implementación iterativa optimizada in-place.\n        // (Ver abajo implementation real)\n    }\n    return []; // Placeholder\n}\n\n// --- IMPLEMENTACIÓN ROBUSTA FFT IN-PLACE ---\nfunction runFFT(data) {\n    var n = data.length;\n    var m = Math.log2(n);\n    \n    // Bit-reversal\n    var i, j, k;\n    var re = new Array(n);\n    var im = new Array(n);\n    \n    for(i=0; i<n; i++) {\n        re[i] = data[i];\n        im[i] = 0.0;\n    }\n    \n    j = 0;\n    for (i = 0; i < n - 1; i++) {\n        if (i < j) {\n            var tr = re[i]; re[i] = re[j]; re[j] = tr;\n            var ti = im[i]; im[i] = im[j]; im[j] = ti;\n        }\n        k = n >> 1;\n        while (k <= j) { j -= k; k >>= 1; }\n        j += k;\n    }\n    \n    // Butterfly\n    var le, le2, ur, ui, sr, si, tr, ti;\n    for (var l = 1; l <= m; l++) {\n        le = 1 << l;\n        le2 = le >> 1;\n        ur = 1.0;\n        ui = 0.0;\n        sr = Math.cos(Math.PI / le2);\n        si = -Math.sin(Math.PI / le2); // FFT Forward\n        \n        for (j = 0; j < le2; j++) {\n            for (i = j; i < n; i += le) {\n                var ip = i + le2;\n                tr = re[ip] * ur - im[ip] * ui;\n                ti = re[ip] * ui + im[ip] * ur;\n                re[ip] = re[i] - tr;\n                im[ip] = im[i] - ti;\n                re[i] = re[i] + tr;\n                im[i] = im[i] + ti;\n            }\n            tr = ur;\n            ur = tr * sr - ui * si;\n            ui = tr * si + ui * sr;\n        }\n    }\n    \n    // Calcular Magnitud\n    var mags = [];\n    // Solo necesitamos la primera mitad (Nyquist)\n    for(i=0; i < n/2; i++) {\n        mags.push(Math.sqrt(re[i]*re[i] + im[i]*im[i]));\n    }\n    return mags;\n}\n\n// --- PROCESAMIENTO PRINCIPAL ---\nvar msgData = msg.payload;\n\n// Validación\nif (!msgData.data || !Array.isArray(msgData.data) || !msgData.fs) return null;\n\nvar timeData = msgData.data;\nvar fs = msgData.fs; // 500 Hz\nvar N = timeData.length; // 256\n\n// 1. Ejecutar FFT\nvar magnitudes = runFFT(timeData);\n\n// 2. Mapear Índices a Frecuencias\n// Resolución = Fs / N = 500 / 256 = 1.95 Hz por bin\nvar spectrum = [];\nvar resolution = fs / N;\n\nfor (var i = 0; i < magnitudes.length; i++) {\n    var freq = i * resolution;\n    // Filtro Pasa Altos (Ignorar DC/Gravedad)\n    if (freq > MIN_FREQ_HZ) {\n        spectrum.push({ f: parseFloat(freq.toFixed(2)), m: parseFloat(magnitudes[i].toFixed(2)) });\n    }\n}\n\n// 3. Encontrar los 3 picos más altos\nspectrum.sort(function(a, b) { return b.m - a.m; }); // Ordenar descendente por magnitud\n\nvar top3 = spectrum.slice(0, 3);\n\n// Si no hay picos (señal plana), rellenar con ceros\nwhile(top3.length < 3) { top3.push({f:0, m:0}); }\n\n// --- PREPARAR SALIDA INFLUXDB ---\n// Usaremos un measurement nuevo: 'vibration_spectrum'\n// Guardaremos las 3 frecuencias principales y sus magnitudes\n\nmsg.payload = {\n    bucket: 'Vibranet_data',\n    precision: 'ms',\n    data: [\n        {\n            measurement: 'vibration_spectrum',\n            tags: {\n                node: msgData.id,\n                sensor: msgData.sensor,\n                type: 'fft_peaks'\n            },\n            fields: {\n                f1_hz: top3[0].f, f1_mag: top3[0].m,\n                f2_hz: top3[1].f, f2_mag: top3[1].m,\n                f3_hz: top3[2].f, f3_mag: top3[2].m,\n                total_energy: magnitudes.reduce((a, b) => a + b, 0).toFixed(2) // Energía total aprox\n            },\n            timestamp: Date.now()\n        }\n    ]\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 2920,
+        "wires": [
+            [
+                "c5a08c29b2745120"
+            ]
+        ]
+    },
+    {
+        "id": "e22acfce02a02bf0",
+        "type": "debug",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "80c5c3aaa67e3d31",
+        "name": "frecuencias",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 2980,
+        "wires": []
+    },
+    {
+        "id": "c5a08c29b2745120",
+        "type": "Stackhero-InfluxDB-v2-write",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "80c5c3aaa67e3d31",
+        "server": "98e8ab9a245e34a9",
+        "name": "influxdb",
+        "x": 580,
+        "y": 2920,
+        "wires": [
+            [
+                "e22acfce02a02bf0"
+            ]
+        ]
+    },
+    {
+        "id": "fb7edfc5f890017b",
+        "type": "comment",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "80c5c3aaa67e3d31",
+        "name": "Modo Burst para FFT",
+        "info": "",
+        "x": 320,
+        "y": 2800,
+        "wires": []
+    },
+    {
+        "id": "728af048d7ebc9c2",
+        "type": "function",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "a8fe8d0d973d7d31",
+        "name": "simulador motor",
+        "func": "// Simulamos un motor rotativo a 50Hz con algo de desbalance\nvar t = new Date().getTime() / 1000; // Tiempo en segundos\nvar freq = 10; // Frecuencia de oscilación simulada\n\n// Generamos onda senoidal + ruido aleatorio\nvar sim_ax = 5.0 * Math.sin(2 * Math.PI * freq * t) + (Math.random() - 0.5);\nvar sim_ay = 2.0 * Math.sin(2 * Math.PI * freq * t + Math.PI / 2) + (Math.random() - 0.5);\nvar sim_az = 9.8 + (Math.random() - 0.2); // Gravedad + ruido\n\nmsg.payload = {\n    id: \"Industria_Node_01\", // <--- ID NUEVO\n    wifi: \"ETHERNET_IND\",\n    vcc: 24.0, // Simulamos alimentación industrial 24V\n    s1: {\n        ax: sim_ax.toFixed(2),\n        ay: sim_ay.toFixed(2),\n        az: sim_az.toFixed(2)\n    },\n    // El sensor 2 está \"apagado\" o no existe en esta máquina\n    // s2: ... \n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 2800,
+        "wires": [
+            [
+                "c18e492096778d2e",
+                "2bc2e8752f0564d8"
+            ]
+        ]
+    },
+    {
+        "id": "139a42e0938668d2",
+        "type": "comment",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "a8fe8d0d973d7d31",
+        "name": "Simulador de Nodo",
+        "info": "",
+        "x": 990,
+        "y": 2680,
+        "wires": []
+    },
+    {
+        "id": "70ee880815bddad7",
+        "type": "inject",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "a8fe8d0d973d7d31",
+        "name": "lanzar simu",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 890,
+        "y": 2740,
+        "wires": [
+            [
+                "c18e492096778d2e"
+            ]
+        ]
+    },
+    {
+        "id": "2bc2e8752f0564d8",
+        "type": "debug",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "a8fe8d0d973d7d31",
+        "name": "sim motor",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 2800,
+        "wires": []
+    },
+    {
+        "id": "c18e492096778d2e",
+        "type": "mqtt out",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "a8fe8d0d973d7d31",
+        "name": "",
+        "topic": "vibranet/data",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "56983aab46619dc7",
+        "x": 1110,
+        "y": 2740,
+        "wires": []
+    },
+    {
+        "id": "379542d0dd008544",
+        "type": "debug",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "b9f03678be164fb8",
+        "name": "RMS, Peak, crest, kurt, vel",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "d60bf95d6d28dd3e",
+        "type": "mqtt in",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "b9f03678be164fb8",
+        "name": "",
+        "topic": "vibranet/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56983aab46619dc7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 2380,
+        "wires": [
+            [
+                "6245eef443f178c0",
+                "47858b525d9b5354"
+            ]
+        ]
+    },
+    {
+        "id": "6245eef443f178c0",
+        "type": "json",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "b9f03678be164fb8",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 170,
+        "y": 2480,
+        "wires": [
+            [
+                "6ef334cfa7bccc08",
+                "d07154e1b8828cac"
+            ]
+        ]
+    },
+    {
+        "id": "c84f5c567a7b8738",
+        "type": "comment",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "b9f03678be164fb8",
+        "name": "probando nuevo pallet que funciona",
+        "info": "",
+        "x": 460,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "199ea7b483270848",
+        "type": "Stackhero-InfluxDB-v2-write",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "b9f03678be164fb8",
+        "server": "98e8ab9a245e34a9",
+        "name": "influxdb",
+        "x": 680,
+        "y": 2500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6ef334cfa7bccc08",
+        "type": "function",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "b9f03678be164fb8",
+        "name": "Split+Tag",
+        "func": "// --- 1. PREPARACIÓN DE DATOS ---\nvar inputData = msg.payload;\n\n// Aseguramos que sea un objeto JSON\nif (typeof inputData === \"string\") {\n    try { inputData = JSON.parse(inputData); } catch (e) { return null; }\n}\n\nvar nodeId = inputData.id || \"unknown\";\n\n// --- 2. FILTRO DE SEGURIDAD ---\nvar validSensors = [\"Dango_Node_001\", \"Dango_Node_002\", \"Telescopio_01\", \"Industria_SRO\", \"Industria_Node_01\"]; \nif (!validSensors.includes(nodeId)) {\n    return null; \n}\n\n// --- 3. CONTEXTO Y TAGS ---\nvar clientName = \"Dango_Prototype\";\nvar locationName = \"Lab_General\";\nvar ssid = inputData.wifi || \"Desconocida\"; // Capturamos el SSID\n\nif (nodeId === \"Dango_Node_001\" || nodeId === \"Telescopio_01\") {\n    clientName = \"Observatorio_Nacional\";\n    locationName = \"Base_Acimutal\";\n} else if (nodeId === \"Dango_Node_002\") {\n    clientName = \"Industria_SRO\";\n    locationName = \"Cinta_Transportadora\";\n} else if (nodeId === \"Industria_Node_01\") {\n    clientName = \"Industria_SRO\";\n    locationName = \"Motor_Compresor_A\";\n}\n\n// --- 4. CONSTRUCCIÓN PARA STACKHERO INFLUXDB ---\nvar dataPoints = [];\n\n// Capturamos el voltaje global del nodo\nvar voltage = parseFloat(inputData.vcc) || 0.0;\n\n// Función auxiliar para crear el objeto de dato\nfunction createPoint(sensorCode, d) {\n    return {\n        measurement: 'vibration_sensor', // Seguimos usando la misma tabla\n        tags: {\n            client: clientName,\n            location: locationName,\n            node: nodeId,\n            sensor: sensorCode,\n            redSSID: ssid,        // <--- NUEVO TAG: Tu red WiFi (PAPETTI)\n            hw_ver: '1.5',\n            sw_ver: '2.5.1'\n        },\n        fields: {\n            ax: parseFloat(d.ax),\n            ay: parseFloat(d.ay),\n            az: parseFloat(d.az),\n            mag_acc: parseFloat(Math.sqrt(d.ax*d.ax + d.ay*d.ay + d.az*d.az).toFixed(4)),\n            \n            // <--- AQUÍ ESTÁ LA MAGIA: Agregamos el voltaje como dato\n            vcc: voltage \n        },\n        timestamp: Date.now()\n    };\n}\n\n// Procesamos s1 y s2 si existen\nif (inputData.s1) dataPoints.push(createPoint(\"s1\", inputData.s1));\nif (inputData.s2) dataPoints.push(createPoint(\"s2\", inputData.s2));\n\n// Si no hay datos validos, salir\nif (dataPoints.length === 0) return null;\n\n// --- 5. SALIDA FINAL ---\nmsg.payload = {\n    bucket: 'Vibranet_data', \n    precision: 'ms',         \n    data: dataPoints         \n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 2380,
+        "wires": [
+            [
+                "c5f9c0ad31d527bf",
+                "ab6a6611fc9d412a"
+            ]
+        ]
+    },
+    {
+        "id": "47858b525d9b5354",
+        "type": "debug",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "b9f03678be164fb8",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 2580,
+        "wires": []
+    },
+    {
+        "id": "d07154e1b8828cac",
+        "type": "function",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "b9f03678be164fb8",
+        "name": "49 data",
+        "func": "// CONFIGURACIÓN\nvar WINDOW_SIZE = 50; // Muestras por ventana\n\n// Factor de conversión: 1 G = 9806.65 mm/s²\n// Para pasar a mm/s al integrar, usamos este factor.\nvar G_TO_MM_S2 = 9806.65;\n\nvar bufferState = flow.get('sensorBuffer') || {}; \n\n// --- FUNCIÓN MATEMÁTICA AVANZADA ---\nfunction calculateComplexMetrics(arr, durationSeconds) {\n    if (arr.length === 0) return null;\n    \n    var n = arr.length;\n    var dt = durationSeconds / n; // Tiempo estimado entre cada muestra\n    \n    // 1. Estadísticas Básicas (Media, Min, Max)\n    var min = Infinity;\n    var max = -Infinity;\n    var sum = 0;\n    \n    for (var i = 0; i < n; i++) {\n        var val = arr[i];\n        if (val < min) min = val;\n        if (val > max) max = val;\n        sum += val;\n    }\n    var mean = sum / n; // Esto representa el componente DC (Gravedad o Offset)\n\n    // 2. Momentos Estadísticos (RMS, Kurtosis)\n    var sumSqDiff = 0;   // Para Varianza/RMS AC\n    var sum4thDiff = 0;  // Para Kurtosis\n    \n    for (var i = 0; i < n; i++) {\n        var diff = arr[i] - mean; // Restamos la media para analizar solo la vibración AC\n        var sq = diff * diff;\n        sumSqDiff += sq;\n        sum4thDiff += sq * sq;\n    }\n    \n    var variance = sumSqDiff / n;\n    var stdev = Math.sqrt(variance); // Desviación estándar\n    var rms = Math.sqrt((sumSqDiff / n) + (mean*mean)); // RMS Real (incluye DC)\n    \n    // Cálculo de Kurtosis (Cuarto momento normalizado)\n    // Una onda senoidal pura tiene Kurtosis ~1.5. Golpes suben esto a >3.\n    var kurtosis = 0;\n    if (variance !== 0) {\n        kurtosis = (sum4thDiff / n) / (variance * variance);\n    }\n\n    var peak = Math.max(Math.abs(min), Math.abs(max));\n    var crestFactor = (rms !== 0) ? (peak / rms) : 0;\n\n    // 3. CÁLCULO DE VELOCIDAD (Integración Numérica)\n    // Convertimos Aceleración (G) a Velocidad (mm/s)\n    // Usamos integración trapezoidal removiendo el componente DC (Gravedad)\n    var velocitySumSq = 0;\n    var currentVel = 0;\n    \n    for (var i = 0; i < n - 1; i++) {\n        // Aceleración en este punto y el siguiente (en G), quitando gravedad (mean)\n        var a1 = (arr[i] - mean); \n        var a2 = (arr[i+1] - mean);\n        \n        // Área del trapecio = Promedio de altura * base (dt)\n        // Resultado en G*s. Multiplicamos por 9806.65 para mm/s\n        var area = ((a1 + a2) / 2) * dt * G_TO_MM_S2;\n        \n        currentVel += area; // Integramos\n        velocitySumSq += currentVel * currentVel;\n    }\n    \n    // RMS de la Velocidad (El valor que pide la norma ISO 10816)\n    var velocityRMS = Math.sqrt(velocitySumSq / (n - 1));\n\n    return {\n        rms: parseFloat(rms.toFixed(4)),\n        peak: parseFloat(peak.toFixed(4)),\n        crest: parseFloat(crestFactor.toFixed(4)),\n        kurtosis: parseFloat(kurtosis.toFixed(4)),\n        velocity_mm_s: parseFloat(velocityRMS.toFixed(4)) // <--- EL DATO NUEVO\n    };\n}\n\n// --- LOGICA PRINCIPAL ---\nvar inputData = msg.payload;\nif (typeof inputData === \"string\") {\n    try { inputData = JSON.parse(inputData); } catch(e) {}\n}\n\nvar nodeId = inputData.id || \"unknown\";\nvar validSensors = [\"Dango_Node_001\", \"Dango_Node_002\", \"Telescopio_01\", \"Industria_SRO\"];\nif (!validSensors.includes(nodeId)) return null;\n\n// Inicializar buffers con MARCA DE TIEMPO\nif (!bufferState[nodeId]) {\n    bufferState[nodeId] = { \n        s1_ax:[], s1_ay:[], s1_az:[], \n        s2_ax:[], s2_ay:[], s2_az:[], \n        startTime: Date.now(), // <--- Guardamos cuándo empezó a llenarse\n        count: 0 \n    };\n}\n\nvar buf = bufferState[nodeId];\n\n// Llenar Buffer\nif (inputData.s1) {\n    buf.s1_ax.push(parseFloat(inputData.s1.ax));\n    buf.s1_ay.push(parseFloat(inputData.s1.ay));\n    buf.s1_az.push(parseFloat(inputData.s1.az));\n}\nif (inputData.s2) {\n    buf.s2_ax.push(parseFloat(inputData.s2.ax));\n    buf.s2_ay.push(parseFloat(inputData.s2.ay));\n    buf.s2_az.push(parseFloat(inputData.s2.az));\n}\n\nbuf.count++;\n\n// ¿Está lleno el buffer?\nif (buf.count >= WINDOW_SIZE) {\n    \n    var endTime = Date.now();\n    // Calculamos duración real de la ráfaga en SEGUNDOS\n    var duration = (endTime - buf.startTime) / 1000; \n    \n    // Evitar división por cero si llega todo instantáneo\n    if (duration <= 0) duration = 0.05; \n\n    var dataPoints = [];\n    var timestamp = endTime;\n    \n    var clientName = \"Dango_Prototype\";\n    var locationName = \"Lab_General\";\n    if (nodeId === \"Dango_Node_001\") { clientName = \"Observatorio_Nacional\"; locationName = \"Base_Acimutal\"; }\n    else if (nodeId === \"Dango_Node_002\") { clientName = \"Industria_SRO\"; locationName = \"Cinta_Transportadora\"; }\n    \n    // Procesar S1\n    if (buf.s1_ax.length > 0) {\n        var mX = calculateComplexMetrics(buf.s1_ax, duration);\n        var mY = calculateComplexMetrics(buf.s1_ay, duration);\n        var mZ = calculateComplexMetrics(buf.s1_az, duration);\n        \n        // Magnitud vectorial de la velocidad\n        var vel_mag = Math.sqrt(mX.velocity_mm_s*mX.velocity_mm_s + mY.velocity_mm_s*mY.velocity_mm_s + mZ.velocity_mm_s*mZ.velocity_mm_s).toFixed(4);\n\n        dataPoints.push({\n            measurement: 'vibration_analysis',\n            tags: { \n                client: clientName, \n                location: locationName, \n                node: nodeId, \n                sensor: \"s1\", \n                type: \"advanced_stats\" },\n            fields: {\n                // Datos existentes\n                rms_x: mX.rms, peak_x: mX.peak, crest_x: mX.crest,\n                rms_y: mY.rms, peak_y: mY.peak, crest_y: mY.crest,\n                rms_z: mZ.rms, peak_z: mZ.peak, crest_z: mZ.crest,\n                \n                // --- NUEVOS DATOS ---\n                kurt_x: mX.kurtosis,\n                kurt_y: mY.kurtosis,\n                kurt_z: mZ.kurtosis,\n                \n                vel_x: mX.velocity_mm_s,\n                vel_y: mY.velocity_mm_s,\n                vel_z: mZ.velocity_mm_s,\n                vel_mag: parseFloat(vel_mag) // <--- ISO 10816 INDICATOR\n            },\n            timestamp: timestamp\n        });\n    }\n\n    // Procesar S2 (Igual que S1)\n    if (buf.s2_ax.length > 0) {\n        var mX2 = calculateComplexMetrics(buf.s2_ax, duration);\n        var mY2 = calculateComplexMetrics(buf.s2_ay, duration);\n        var mZ2 = calculateComplexMetrics(buf.s2_az, duration);\n        var vel_mag2 = Math.sqrt(mX2.velocity_mm_s*mX2.velocity_mm_s + mY2.velocity_mm_s*mY2.velocity_mm_s + mZ2.velocity_mm_s*mZ2.velocity_mm_s).toFixed(4);\n\n        dataPoints.push({\n            measurement: 'vibration_analysis',\n            tags: { client: clientName, location: locationName, node: nodeId, sensor: \"s2\", type: \"advanced_stats\" },\n            fields: {\n                rms_x: mX2.rms, peak_x: mX2.peak, crest_x: mX2.crest,\n                rms_y: mY2.rms, peak_y: mY2.peak, crest_y: mY2.crest,\n                rms_z: mZ2.rms, peak_z: mZ2.peak, crest_z: mZ2.crest,\n                kurt_x: mX2.kurtosis, kurt_y: mY2.kurtosis, kurt_z: mZ2.kurtosis,\n                vel_x: mX2.velocity_mm_s, vel_y: mY2.velocity_mm_s, vel_z: mZ2.velocity_mm_s,\n                vel_mag: parseFloat(vel_mag2)\n            },\n            timestamp: timestamp\n        });\n    }\n\n    // Reset Buffer\n    bufferState[nodeId] = { \n        s1_ax:[], s1_ay:[], s1_az:[], \n        s2_ax:[], s2_ay:[], s2_az:[], \n        startTime: Date.now(), // Reiniciamos reloj\n        count: 0 \n    };\n    flow.set('sensorBuffer', bufferState); \n\n    msg.payload = { bucket: 'Vibranet_data', precision: 'ms', data: dataPoints };\n    return msg;\n\n} else {\n    flow.set('sensorBuffer', bufferState);\n    return null; \n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 2500,
+        "wires": [
+            [
+                "199ea7b483270848",
+                "379542d0dd008544"
+            ]
+        ]
+    },
+    {
+        "id": "ab6a6611fc9d412a",
+        "type": "debug",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "b9f03678be164fb8",
+        "name": "ax, ay, az, magnitud",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 2440,
+        "wires": []
+    },
+    {
+        "id": "c5f9c0ad31d527bf",
+        "type": "Stackhero-InfluxDB-v2-write",
+        "z": "b29ae43622fe4a42",
+        "d": true,
+        "g": "b9f03678be164fb8",
+        "server": "98e8ab9a245e34a9",
+        "name": "influxdb",
+        "x": 680,
+        "y": 2380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3cb79da08b858a51",
+        "type": "comment",
+        "z": "b29ae43622fe4a42",
+        "name": "V1.6",
+        "info": "",
+        "x": 1050,
+        "y": 2220,
         "wires": []
     }
 ]
