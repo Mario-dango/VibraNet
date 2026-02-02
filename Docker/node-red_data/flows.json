@@ -158,6 +158,52 @@
         "h": 402
     },
     {
+        "id": "fa66d27ce52ebef8",
+        "type": "group",
+        "z": "a9c03d3f35ffc9ac",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "122afeb919a183e4",
+            "7e1d5ca265512a6b",
+            "2cbb2c553332cecf"
+        ],
+        "x": 8,
+        "y": 13,
+        "w": 1204,
+        "h": 794
+    },
+    {
+        "id": "8f868f30c676489b",
+        "type": "group",
+        "z": "b29ae43622fe4a42",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "80c5c3aaa67e3d31",
+            "a8fe8d0d973d7d31",
+            "b9f03678be164fb8"
+        ],
+        "x": 28,
+        "y": 2253,
+        "w": 1204,
+        "h": 794
+    },
+    {
         "id": "7e1d5ca265512a6b",
         "type": "group",
         "z": "a9c03d3f35ffc9ac",
@@ -241,56 +287,10 @@
             "d81f6c34f1ecc6b9",
             "9ffc3e546d4afb89"
         ],
-        "x": 54,
+        "x": 34,
         "y": 399,
         "w": 692,
         "h": 382
-    },
-    {
-        "id": "fa66d27ce52ebef8",
-        "type": "group",
-        "z": "a9c03d3f35ffc9ac",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "122afeb919a183e4",
-            "7e1d5ca265512a6b",
-            "2cbb2c553332cecf"
-        ],
-        "x": 8,
-        "y": 13,
-        "w": 1204,
-        "h": 794
-    },
-    {
-        "id": "8f868f30c676489b",
-        "type": "group",
-        "z": "b29ae43622fe4a42",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "80c5c3aaa67e3d31",
-            "a8fe8d0d973d7d31",
-            "b9f03678be164fb8"
-        ],
-        "x": 28,
-        "y": 2253,
-        "w": 1204,
-        "h": 794
     },
     {
         "id": "80c5c3aaa67e3d31",
@@ -536,7 +536,7 @@
         "z": "a9c03d3f35ffc9ac",
         "g": "2cbb2c553332cecf",
         "name": "Split+Tag",
-        "func": "// --- 1. PREPARACIÓN DE DATOS ---\nvar inputData = msg.payload;\n\n// Aseguramos que sea un objeto JSON\nif (typeof inputData === \"string\") {\n    try { inputData = JSON.parse(inputData); } catch (e) { return null; }\n}\n\nvar nodeId = inputData.id || \"unknown\";\n\n// --- 2. FILTRO DE SEGURIDAD ---\nvar validSensors = [\"Dango_Node_001\", \"Dango_Node_002\", \"Telescopio_01\", \"Industria_SRO\", \"Industria_Node_01\"]; \nif (!validSensors.includes(nodeId)) {\n    return null; \n}\n\n// --- 3. CONTEXTO Y TAGS ---\nvar clientName = \"Dango_Prototype\";\nvar locationName = \"Lab_General\";\nvar ssid = inputData.wifi || \"Desconocida\"; // Capturamos el SSID\n\nif (nodeId === \"Dango_Node_001\" || nodeId === \"Telescopio_01\") {\n    clientName = \"Observatorio_Nacional\";\n    locationName = \"Base_Acimutal\";\n} else if (nodeId === \"Dango_Node_002\") {\n    clientName = \"Industria_SRO\";\n    locationName = \"Cinta_Transportadora\";\n} else if (nodeId === \"Industria_Node_01\") {\n    clientName = \"Industria_SRO\";\n    locationName = \"Motor_Compresor_A\";\n}\n\n// --- 4. CONSTRUCCIÓN PARA STACKHERO INFLUXDB ---\nvar dataPoints = [];\n\n// Capturamos el voltaje global del nodo\nvar voltage = parseFloat(inputData.vcc) || 0.0;\n\n// Función auxiliar para crear el objeto de dato\nfunction createPoint(sensorCode, d) {\n    return {\n        measurement: 'vibration_sensor', // Seguimos usando la misma tabla\n        tags: {\n            client: clientName,\n            location: locationName,\n            node: nodeId,\n            sensor: sensorCode,\n            redSSID: ssid,        // <--- NUEVO TAG: Tu red WiFi (PAPETTI)\n            hw_ver: '1.5',\n            sw_ver: '2.5.1'\n        },\n        fields: {\n            ax: parseFloat(d.ax),\n            ay: parseFloat(d.ay),\n            az: parseFloat(d.az),\n            mag_acc: parseFloat(Math.sqrt(d.ax*d.ax + d.ay*d.ay + d.az*d.az).toFixed(4)),\n            \n            // <--- AQUÍ ESTÁ LA MAGIA: Agregamos el voltaje como dato\n            vcc: voltage \n        },\n        timestamp: Date.now()\n    };\n}\n\n// Procesamos s1 y s2 si existen\nif (inputData.s1) dataPoints.push(createPoint(\"s1\", inputData.s1));\nif (inputData.s2) dataPoints.push(createPoint(\"s2\", inputData.s2));\n\n// Si no hay datos validos, salir\nif (dataPoints.length === 0) return null;\n\n// --- 5. SALIDA FINAL ---\nmsg.payload = {\n    bucket: 'Vibranet_data', \n    precision: 'ms',         \n    data: dataPoints         \n};\n\nreturn msg;",
+        "func": "// --- 1. PREPARACIÓN DE DATOS ---\nvar inputData = msg.payload;\n\n// Aseguramos que sea un objeto JSON\nif (typeof inputData === \"string\") {\n    try { inputData = JSON.parse(inputData); } catch (e) { return null; }\n}\n\nvar nodeId = inputData.id || \"unknown\";\n\n// --- 2. FILTRO DE SEGURIDAD ---\nvar validSensors = [\"dango_node_001\", \"dango_node_002\", \"Telescopio_01\", \"Industria_SRO\", \"Industria_Node_01\"]; \nif (!validSensors.includes(nodeId)) {\n    return null; \n}\n\n// --- 3. CONTEXTO Y TAGS ---\nvar clientName = \"Dango_Prototype\";\nvar locationName = \"Lab_General\";\nvar ssid = inputData.wifi || \"Desconocida\"; // Capturamos el SSID\n\nif (nodeId === \"Dango_Node_001\" || nodeId === \"Telescopio_01\") {\n    clientName = \"Observatorio_Nacional\";\n    locationName = \"Base_Acimutal\";\n} else if (nodeId === \"dango_node_002\") {\n    clientName = \"Industria_SRO\";\n    locationName = \"Cinta_Transportadora\";\n} else if (nodeId === \"Industria_Node_01\") {\n    clientName = \"Industria_SRO\";\n    locationName = \"Motor_Compresor_A\";\n}\n\n// --- 4. CONSTRUCCIÓN PARA STACKHERO INFLUXDB ---\nvar dataPoints = [];\n\n// Capturamos el voltaje global del nodo\nvar voltage = parseFloat(inputData.vcc) || 0.0;\n\n// Función auxiliar para crear el objeto de dato\nfunction createPoint(sensorCode, d) {\n    return {\n        measurement: 'vibration_sensor', // Seguimos usando la misma tabla\n        tags: {\n            client: clientName,\n            location: locationName,\n            node: nodeId,\n            sensor: sensorCode,\n            redSSID: ssid,        // <--- NUEVO TAG: Tu red WiFi (PAPETTI)\n            hw_ver: '1.5',\n            sw_ver: '2.5.1'\n        },\n        fields: {\n            ax: parseFloat(d.ax),\n            ay: parseFloat(d.ay),\n            az: parseFloat(d.az),\n            mag_acc: parseFloat(Math.sqrt(d.ax*d.ax + d.ay*d.ay + d.az*d.az).toFixed(4)),\n            \n            // <--- AQUÍ ESTÁ LA MAGIA: Agregamos el voltaje como dato\n            vcc: voltage \n        },\n        timestamp: Date.now()\n    };\n}\n\n// Procesamos s1 y s2 si existen\nif (inputData.s1) dataPoints.push(createPoint(\"s1\", inputData.s1));\nif (inputData.s2) dataPoints.push(createPoint(\"s2\", inputData.s2));\n\n// Si no hay datos validos, salir\nif (dataPoints.length === 0) return null;\n\n// --- 5. SALIDA FINAL ---\nmsg.payload = {\n    bucket: 'Vibranet_data', \n    precision: 'ms',         \n    data: dataPoints         \n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -558,7 +558,7 @@
         "z": "a9c03d3f35ffc9ac",
         "g": "2cbb2c553332cecf",
         "name": "debug 2",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -591,7 +591,7 @@
         "topic": "",
         "payload": "100",
         "payloadType": "num",
-        "x": 210,
+        "x": 190,
         "y": 480,
         "wires": [
             [
@@ -614,7 +614,7 @@
         "correl": "",
         "expiry": "",
         "broker": "56983aab46619dc7",
-        "x": 580,
+        "x": 560,
         "y": 480,
         "wires": []
     },
@@ -625,7 +625,7 @@
         "g": "122afeb919a183e4",
         "name": "flujo configura ventana de muestreo",
         "info": "",
-        "x": 340,
+        "x": 320,
         "y": 440,
         "wires": []
     },
@@ -657,7 +657,7 @@
         "z": "a9c03d3f35ffc9ac",
         "g": "2cbb2c553332cecf",
         "name": "ax, ay, az, magnitud",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -704,7 +704,7 @@
         "topic": "",
         "payload": "BURST",
         "payloadType": "str",
-        "x": 150,
+        "x": 130,
         "y": 620,
         "wires": [
             [
@@ -727,7 +727,7 @@
         "correl": "",
         "expiry": "",
         "broker": "56983aab46619dc7",
-        "x": 480,
+        "x": 460,
         "y": 620,
         "wires": []
     },
@@ -745,7 +745,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
+        "x": 150,
         "y": 680,
         "wires": [
             [
@@ -768,7 +768,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 380,
+        "x": 360,
         "y": 740,
         "wires": []
     },
@@ -785,7 +785,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
+        "x": 350,
         "y": 680,
         "wires": [
             [
@@ -807,7 +807,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 630,
+        "x": 610,
         "y": 740,
         "wires": []
     },
@@ -818,7 +818,7 @@
         "g": "122afeb919a183e4",
         "server": "98e8ab9a245e34a9",
         "name": "influxdb",
-        "x": 560,
+        "x": 540,
         "y": 680,
         "wires": [
             [
@@ -833,7 +833,7 @@
         "g": "122afeb919a183e4",
         "name": "Modo Burst para FFT",
         "info": "",
-        "x": 300,
+        "x": 280,
         "y": 560,
         "wires": []
     },
@@ -854,7 +854,6 @@
         "y": 560,
         "wires": [
             [
-                "06605f8e02bac5d1",
                 "be14835c57a215df"
             ]
         ]
@@ -896,7 +895,7 @@
         "y": 500,
         "wires": [
             [
-                "06605f8e02bac5d1"
+                "5d9697599f19eb5b"
             ]
         ]
     },
@@ -935,6 +934,43 @@
         "broker": "56983aab46619dc7",
         "x": 1090,
         "y": 500,
+        "wires": []
+    },
+    {
+        "id": "b35086090a159299",
+        "type": "mqtt in",
+        "z": "a9c03d3f35ffc9ac",
+        "name": "",
+        "topic": "vibranet/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "56983aab46619dc7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 840,
+        "wires": [
+            [
+                "eb1532425def9744"
+            ]
+        ]
+    },
+    {
+        "id": "eb1532425def9744",
+        "type": "debug",
+        "z": "a9c03d3f35ffc9ac",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 860,
         "wires": []
     },
     {

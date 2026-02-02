@@ -1,9 +1,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// Identificación del nodo
-#define NODE_ID "Dango_Node_001"
-
 // Configuración del sensor
 // MPU1 siempre en 0x68. MPU2 (opcional) debe tener el pin AD0 a 3.3V para ser 0x69
 #define MPU1_ADDR 0x68 
@@ -28,6 +25,11 @@
 
 #define MQTT_PORT 1883
 #define MQTT_TOPIC "vibranet/data"
+
+
+#define LED_PIN 2
+#define BATTERY_PIN A0
+#define NODE_ID "dango_node_01"
 
 #endif // CONFIG_H
 

@@ -46,35 +46,17 @@ services:
       - ./grafana_data:/var/lib/grafana
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin # Cambiar esto luego
-      - GF_AUTH_ANONYMOUS_ENABLED=true
-      - GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
+      # - GF_AUTH_ANONYMOUS_ENABLED=true
+      # - GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
     depends_on:
       - influxdb
     restart: unless-stopped
+
+  cloudflared:
+      image: cloudflare/cloudflared:latest
+      container_name: cloudflared_tunnel
+      restart: unless-stopped
+      command: tunnel run
+      environment:
+        - TUNNEL_TOKEN=eyJhIjoiMTI0ODYyYzg3MDM1NzI0Y2ZhNmI3NjYwYjIyZTA2MTEiLCJ0IjoiNmJkMjllMTEtMTM4Ny00ZTliLWFhYmItMjdmODBkZmJhYWI4IiwicyI6Ik1UUXdZMll4TUdFdFlUVm1NUzAwTWpnd0xXSTRaVGd0WXpFMk9HTmlOR1F6TURCaiJ9
     
-# Túnel 1: Grafana (Ya lo tenías)
-  tunnel_grafana:
-    image: cloudflare/cloudflared:latest
-    container_name: cf_grafana
-    command: tunnel --url http://grafana:3000
-    restart: unless-stopped
-    depends_on:
-      - grafana
-
-  # Túnel 2: Node-RED (¡CUIDADO! No tiene contraseña por defecto)
-  tunnel_nodered:
-    image: cloudflare/cloudflared:latest
-    container_name: cf_nodered
-    command: tunnel --url http://nodered:1880
-    restart: unless-stopped
-    depends_on:
-      - node-red
-
-  # Túnel 3: InfluxDB (Base de datos)
-  tunnel_influx:
-    image: cloudflare/cloudflared:latest
-    container_name: cf_influx
-    command: tunnel --url http://influxdb:8086
-    restart: unless-stopped
-    depends_on:
-      - influxdb
