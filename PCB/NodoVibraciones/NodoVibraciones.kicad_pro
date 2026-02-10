@@ -492,7 +492,7 @@
       "plot": "Fab_output/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../../DESIGN/NodoVibraciones.step",
       "svg": "",
       "vrml": ""
     },

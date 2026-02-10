@@ -473,5 +473,46 @@
                 "file": "/data/node_modules/node-red-contrib-telegrambot/telegrambot/99-telegrambot.js"
             }
         }
+    },
+    "node-red-contrib-stackhero-influxdb-v2": {
+        "name": "node-red-contrib-stackhero-influxdb-v2",
+        "version": "1.0.4",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "stackhero-influxdb-v2-main": {
+                "name": "stackhero-influxdb-v2-main",
+                "types": [
+                    "Stackhero-InfluxDB-v2-Server"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-stackhero-influxdb-v2",
+                "file": "/data/node_modules/node-red-contrib-stackhero-influxdb-v2/src/main.js"
+            },
+            "stackhero-influxdb-v2-query": {
+                "name": "stackhero-influxdb-v2-query",
+                "types": [
+                    "Stackhero-InfluxDB-v2-query"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-stackhero-influxdb-v2",
+                "file": "/data/node_modules/node-red-contrib-stackhero-influxdb-v2/src/query.js"
+            },
+            "stackhero-influxdb-v2-write": {
+                "name": "stackhero-influxdb-v2-write",
+                "types": [
+                    "Stackhero-InfluxDB-v2-write"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-stackhero-influxdb-v2",
+                "file": "/data/node_modules/node-red-contrib-stackhero-influxdb-v2/src/write.js"
+            }
+        }
     }
 }

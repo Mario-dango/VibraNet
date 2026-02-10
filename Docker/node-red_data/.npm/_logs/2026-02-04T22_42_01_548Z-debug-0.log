@@ -1,0 +1,304 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.19.6
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/.npmrc
+5 silly config load:file:/usr/src/node-red/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm remove node-red-contrib-smartnora
+8 verbose argv "remove" "--no-audit" "--no-update-notifier" "--no-fund" "--save" "node-red-contrib-smartnora"
+9 verbose logfile logs-max:10 dir:/data/.npm/_logs/2026-02-04T22_42_01_548Z-
+10 verbose logfile /data/.npm/_logs/2026-02-04T22_42_01_548Z-debug-0.log
+11 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly reify mark retired [ '/data/node_modules/@andrei-tatar/nora-firebase-common' ]
+15 silly reify mark retired [ '/data/node_modules/@firebase/ai' ]
+16 silly reify mark retired [ '/data/node_modules/@firebase/analytics' ]
+17 silly reify mark retired [ '/data/node_modules/@firebase/analytics-compat' ]
+18 silly reify mark retired [ '/data/node_modules/@firebase/analytics-types' ]
+19 silly reify mark retired [ '/data/node_modules/@firebase/app' ]
+20 silly reify mark retired [ '/data/node_modules/@firebase/app-check' ]
+21 silly reify mark retired [ '/data/node_modules/@firebase/app-check-compat' ]
+22 silly reify mark retired [ '/data/node_modules/@firebase/app-check-interop-types' ]
+23 silly reify mark retired [ '/data/node_modules/@firebase/app-check-types' ]
+24 silly reify mark retired [ '/data/node_modules/@firebase/app-compat' ]
+25 silly reify mark retired [ '/data/node_modules/@firebase/app-types' ]
+26 silly reify mark retired [ '/data/node_modules/@firebase/auth' ]
+27 silly reify mark retired [ '/data/node_modules/@firebase/auth-compat' ]
+28 silly reify mark retired [ '/data/node_modules/@firebase/auth-interop-types' ]
+29 silly reify mark retired [ '/data/node_modules/@firebase/auth-types' ]
+30 silly reify mark retired [ '/data/node_modules/@firebase/component' ]
+31 silly reify mark retired [ '/data/node_modules/@firebase/data-connect' ]
+32 silly reify mark retired [ '/data/node_modules/@firebase/database' ]
+33 silly reify mark retired [ '/data/node_modules/@firebase/database-compat' ]
+34 silly reify mark retired [ '/data/node_modules/@firebase/database-types' ]
+35 silly reify mark retired [ '/data/node_modules/@firebase/firestore' ]
+36 silly reify mark retired [ '/data/node_modules/@firebase/firestore-compat' ]
+37 silly reify mark retired [ '/data/node_modules/@firebase/firestore-types' ]
+38 silly reify mark retired [ '/data/node_modules/@firebase/functions' ]
+39 silly reify mark retired [ '/data/node_modules/@firebase/functions-compat' ]
+40 silly reify mark retired [ '/data/node_modules/@firebase/functions-types' ]
+41 silly reify mark retired [ '/data/node_modules/@firebase/installations' ]
+42 silly reify mark retired [ '/data/node_modules/@firebase/installations-compat' ]
+43 silly reify mark retired [ '/data/node_modules/@firebase/installations-types' ]
+44 silly reify mark retired [ '/data/node_modules/@firebase/logger' ]
+45 silly reify mark retired [ '/data/node_modules/@firebase/messaging' ]
+46 silly reify mark retired [ '/data/node_modules/@firebase/messaging-compat' ]
+47 silly reify mark retired [ '/data/node_modules/@firebase/messaging-interop-types' ]
+48 silly reify mark retired [ '/data/node_modules/@firebase/performance' ]
+49 silly reify mark retired [ '/data/node_modules/@firebase/performance-compat' ]
+50 silly reify mark retired [ '/data/node_modules/@firebase/performance-types' ]
+51 silly reify mark retired [ '/data/node_modules/@firebase/remote-config' ]
+52 silly reify mark retired [ '/data/node_modules/@firebase/remote-config-compat' ]
+53 silly reify mark retired [ '/data/node_modules/@firebase/remote-config-types' ]
+54 silly reify mark retired [ '/data/node_modules/@firebase/storage' ]
+55 silly reify mark retired [ '/data/node_modules/@firebase/storage-compat' ]
+56 silly reify mark retired [ '/data/node_modules/@firebase/storage-types' ]
+57 silly reify mark retired [ '/data/node_modules/@firebase/util' ]
+58 silly reify mark retired [ '/data/node_modules/@firebase/webchannel-wrapper' ]
+59 silly reify mark retired [ '/data/node_modules/@grpc/grpc-js' ]
+60 silly reify mark retired [
+60 silly reify   '/data/node_modules/@grpc/proto-loader',
+60 silly reify   '/data/node_modules/.bin/proto-loader-gen-types'
+60 silly reify ]
+61 silly reify mark retired [ '/data/node_modules/@protobufjs/aspromise' ]
+62 silly reify mark retired [ '/data/node_modules/@protobufjs/base64' ]
+63 silly reify mark retired [ '/data/node_modules/@protobufjs/codegen' ]
+64 silly reify mark retired [ '/data/node_modules/@protobufjs/eventemitter' ]
+65 silly reify mark retired [ '/data/node_modules/@protobufjs/fetch' ]
+66 silly reify mark retired [ '/data/node_modules/@protobufjs/float' ]
+67 silly reify mark retired [ '/data/node_modules/@protobufjs/inquire' ]
+68 silly reify mark retired [ '/data/node_modules/@protobufjs/path' ]
+69 silly reify mark retired [ '/data/node_modules/@protobufjs/pool' ]
+70 silly reify mark retired [ '/data/node_modules/@protobufjs/utf8' ]
+71 silly reify mark retired [ '/data/node_modules/@types/node' ]
+72 silly reify mark retired [ '/data/node_modules/ansi-regex' ]
+73 silly reify mark retired [ '/data/node_modules/ansi-styles' ]
+74 silly reify mark retired [ '/data/node_modules/cbor' ]
+75 silly reify mark retired [ '/data/node_modules/cliui' ]
+76 silly reify mark retired [ '/data/node_modules/color-convert' ]
+77 silly reify mark retired [ '/data/node_modules/color-name' ]
+78 silly reify mark retired [ '/data/node_modules/emoji-regex' ]
+79 silly reify mark retired [ '/data/node_modules/escalade' ]
+80 silly reify mark retired [ '/data/node_modules/fast-uri' ]
+81 silly reify mark retired [ '/data/node_modules/faye-websocket' ]
+82 silly reify mark retired [ '/data/node_modules/firebase' ]
+83 silly reify mark retired [ '/data/node_modules/get-caller-file' ]
+84 silly reify mark retired [ '/data/node_modules/http-parser-js' ]
+85 silly reify mark retired [ '/data/node_modules/idb' ]
+86 silly reify mark retired [ '/data/node_modules/is-fullwidth-code-point' ]
+87 silly reify mark retired [ '/data/node_modules/lodash.camelcase' ]
+88 silly reify mark retired [ '/data/node_modules/long' ]
+89 silly reify mark retired [ '/data/node_modules/node-red-contrib-smartnora' ]
+90 silly reify mark retired [ '/data/node_modules/nofilter' ]
+91 silly reify mark retired [ '/data/node_modules/protobufjs' ]
+92 silly reify mark retired [ '/data/node_modules/require-directory' ]
+93 silly reify mark retired [ '/data/node_modules/require-from-string' ]
+94 silly reify mark retired [ '/data/node_modules/rxjs' ]
+95 silly reify mark retired [ '/data/node_modules/string-width' ]
+96 silly reify mark retired [ '/data/node_modules/strip-ansi' ]
+97 silly reify mark retired [ '/data/node_modules/tslib' ]
+98 silly reify mark retired [ '/data/node_modules/undici-types' ]
+99 silly reify mark retired [ '/data/node_modules/web-vitals' ]
+100 silly reify mark retired [ '/data/node_modules/websocket-driver' ]
+101 silly reify mark retired [ '/data/node_modules/websocket-extensions' ]
+102 silly reify mark retired [ '/data/node_modules/wrap-ansi' ]
+103 silly reify mark retired [ '/data/node_modules/y18n' ]
+104 silly reify mark retired [ '/data/node_modules/yargs' ]
+105 silly reify mark retired [ '/data/node_modules/yargs-parser' ]
+106 silly reify moves {
+106 silly reify   '/data/node_modules/@andrei-tatar/nora-firebase-common': '/data/node_modules/@andrei-tatar/.nora-firebase-common-8foxSLRd',
+106 silly reify   '/data/node_modules/@firebase/ai': '/data/node_modules/@firebase/.ai-nwYrYV43',
+106 silly reify   '/data/node_modules/@firebase/analytics': '/data/node_modules/@firebase/.analytics-McHMI8Wk',
+106 silly reify   '/data/node_modules/@firebase/analytics-compat': '/data/node_modules/@firebase/.analytics-compat-pvzn2uHi',
+106 silly reify   '/data/node_modules/@firebase/analytics-types': '/data/node_modules/@firebase/.analytics-types-ibhpf6CP',
+106 silly reify   '/data/node_modules/@firebase/app': '/data/node_modules/@firebase/.app-YNCD7HhH',
+106 silly reify   '/data/node_modules/@firebase/app-check': '/data/node_modules/@firebase/.app-check-ofzp9TaO',
+106 silly reify   '/data/node_modules/@firebase/app-check-compat': '/data/node_modules/@firebase/.app-check-compat-WhHORZJE',
+106 silly reify   '/data/node_modules/@firebase/app-check-interop-types': '/data/node_modules/@firebase/.app-check-interop-types-8p0tv2fk',
+106 silly reify   '/data/node_modules/@firebase/app-check-types': '/data/node_modules/@firebase/.app-check-types-x8kKuFlE',
+106 silly reify   '/data/node_modules/@firebase/app-compat': '/data/node_modules/@firebase/.app-compat-x7sfBc7y',
+106 silly reify   '/data/node_modules/@firebase/app-types': '/data/node_modules/@firebase/.app-types-l2qKaUeb',
+106 silly reify   '/data/node_modules/@firebase/auth': '/data/node_modules/@firebase/.auth-UT5OfdBi',
+106 silly reify   '/data/node_modules/@firebase/auth-compat': '/data/node_modules/@firebase/.auth-compat-kTiPsfdh',
+106 silly reify   '/data/node_modules/@firebase/auth-interop-types': '/data/node_modules/@firebase/.auth-interop-types-rb7cttGZ',
+106 silly reify   '/data/node_modules/@firebase/auth-types': '/data/node_modules/@firebase/.auth-types-7TCgiLhg',
+106 silly reify   '/data/node_modules/@firebase/component': '/data/node_modules/@firebase/.component-XrowISxD',
+106 silly reify   '/data/node_modules/@firebase/data-connect': '/data/node_modules/@firebase/.data-connect-SOVMJnVr',
+106 silly reify   '/data/node_modules/@firebase/database': '/data/node_modules/@firebase/.database-iD9DCvvy',
+106 silly reify   '/data/node_modules/@firebase/database-compat': '/data/node_modules/@firebase/.database-compat-6Gmk9pLA',
+106 silly reify   '/data/node_modules/@firebase/database-types': '/data/node_modules/@firebase/.database-types-xk8NDiQS',
+106 silly reify   '/data/node_modules/@firebase/firestore': '/data/node_modules/@firebase/.firestore-seVu4Rxo',
+106 silly reify   '/data/node_modules/@firebase/firestore-compat': '/data/node_modules/@firebase/.firestore-compat-0dSjgu8A',
+106 silly reify   '/data/node_modules/@firebase/firestore-types': '/data/node_modules/@firebase/.firestore-types-kAsa0a28',
+106 silly reify   '/data/node_modules/@firebase/functions': '/data/node_modules/@firebase/.functions-12uh30pu',
+106 silly reify   '/data/node_modules/@firebase/functions-compat': '/data/node_modules/@firebase/.functions-compat-rESQWofR',
+106 silly reify   '/data/node_modules/@firebase/functions-types': '/data/node_modules/@firebase/.functions-types-jfXBPSKT',
+106 silly reify   '/data/node_modules/@firebase/installations': '/data/node_modules/@firebase/.installations-9TqfMZx9',
+106 silly reify   '/data/node_modules/@firebase/installations-compat': '/data/node_modules/@firebase/.installations-compat-pEuooLoa',
+106 silly reify   '/data/node_modules/@firebase/installations-types': '/data/node_modules/@firebase/.installations-types-b57miSwe',
+106 silly reify   '/data/node_modules/@firebase/logger': '/data/node_modules/@firebase/.logger-pV1R3htD',
+106 silly reify   '/data/node_modules/@firebase/messaging': '/data/node_modules/@firebase/.messaging-U771Mc2j',
+106 silly reify   '/data/node_modules/@firebase/messaging-compat': '/data/node_modules/@firebase/.messaging-compat-LRE68OCh',
+106 silly reify   '/data/node_modules/@firebase/messaging-interop-types': '/data/node_modules/@firebase/.messaging-interop-types-Y5KUd2GZ',
+106 silly reify   '/data/node_modules/@firebase/performance': '/data/node_modules/@firebase/.performance-292a4gtJ',
+106 silly reify   '/data/node_modules/@firebase/performance-compat': '/data/node_modules/@firebase/.performance-compat-N296xyrw',
+106 silly reify   '/data/node_modules/@firebase/performance-types': '/data/node_modules/@firebase/.performance-types-zyE9Wyi2',
+106 silly reify   '/data/node_modules/@firebase/remote-config': '/data/node_modules/@firebase/.remote-config-HG52vdag',
+106 silly reify   '/data/node_modules/@firebase/remote-config-compat': '/data/node_modules/@firebase/.remote-config-compat-bqCqI5nX',
+106 silly reify   '/data/node_modules/@firebase/remote-config-types': '/data/node_modules/@firebase/.remote-config-types-MbgXEg48',
+106 silly reify   '/data/node_modules/@firebase/storage': '/data/node_modules/@firebase/.storage-6U670o9y',
+106 silly reify   '/data/node_modules/@firebase/storage-compat': '/data/node_modules/@firebase/.storage-compat-J5gUJRbl',
+106 silly reify   '/data/node_modules/@firebase/storage-types': '/data/node_modules/@firebase/.storage-types-1qwhMuzC',
+106 silly reify   '/data/node_modules/@firebase/util': '/data/node_modules/@firebase/.util-FmwQ4Zyq',
+106 silly reify   '/data/node_modules/@firebase/webchannel-wrapper': '/data/node_modules/@firebase/.webchannel-wrapper-iaek0wxH',
+106 silly reify   '/data/node_modules/@grpc/grpc-js': '/data/node_modules/@grpc/.grpc-js-jgxNoFbY',
+106 silly reify   '/data/node_modules/@grpc/proto-loader': '/data/node_modules/@grpc/.proto-loader-8vbTwyUk',
+106 silly reify   '/data/node_modules/.bin/proto-loader-gen-types': '/data/node_modules/.bin/.proto-loader-gen-types-rmJdGtB6',
+106 silly reify   '/data/node_modules/@protobufjs/aspromise': '/data/node_modules/@protobufjs/.aspromise-evNljqIp',
+106 silly reify   '/data/node_modules/@protobufjs/base64': '/data/node_modules/@protobufjs/.base64-l4JLjOKB',
+106 silly reify   '/data/node_modules/@protobufjs/codegen': '/data/node_modules/@protobufjs/.codegen-RmaKLKig',
+106 silly reify   '/data/node_modules/@protobufjs/eventemitter': '/data/node_modules/@protobufjs/.eventemitter-qvmyvzv1',
+106 silly reify   '/data/node_modules/@protobufjs/fetch': '/data/node_modules/@protobufjs/.fetch-n3ZnFNI5',
+106 silly reify   '/data/node_modules/@protobufjs/float': '/data/node_modules/@protobufjs/.float-hCfY5J1c',
+106 silly reify   '/data/node_modules/@protobufjs/inquire': '/data/node_modules/@protobufjs/.inquire-5g2nX2AR',
+106 silly reify   '/data/node_modules/@protobufjs/path': '/data/node_modules/@protobufjs/.path-giKGsS0n',
+106 silly reify   '/data/node_modules/@protobufjs/pool': '/data/node_modules/@protobufjs/.pool-joeTRkXc',
+106 silly reify   '/data/node_modules/@protobufjs/utf8': '/data/node_modules/@protobufjs/.utf8-YOZY46p3',
+106 silly reify   '/data/node_modules/@types/node': '/data/node_modules/@types/.node-hhfaj4BM',
+106 silly reify   '/data/node_modules/ansi-regex': '/data/node_modules/.ansi-regex-UnXQL7ut',
+106 silly reify   '/data/node_modules/ansi-styles': '/data/node_modules/.ansi-styles-2kNSBsZO',
+106 silly reify   '/data/node_modules/cbor': '/data/node_modules/.cbor-mDHtwvnV',
+106 silly reify   '/data/node_modules/cliui': '/data/node_modules/.cliui-yxzVXKWS',
+106 silly reify   '/data/node_modules/color-convert': '/data/node_modules/.color-convert-CyDcREMC',
+106 silly reify   '/data/node_modules/color-name': '/data/node_modules/.color-name-VkBrgzKr',
+106 silly reify   '/data/node_modules/emoji-regex': '/data/node_modules/.emoji-regex-3DE4Hvsb',
+106 silly reify   '/data/node_modules/escalade': '/data/node_modules/.escalade-c0bvgGn7',
+106 silly reify   '/data/node_modules/fast-uri': '/data/node_modules/.fast-uri-NDzzCjcb',
+106 silly reify   '/data/node_modules/faye-websocket': '/data/node_modules/.faye-websocket-H2dy2Peu',
+106 silly reify   '/data/node_modules/firebase': '/data/node_modules/.firebase-fnFyHLBA',
+106 silly reify   '/data/node_modules/get-caller-file': '/data/node_modules/.get-caller-file-twepYwfK',
+106 silly reify   '/data/node_modules/http-parser-js': '/data/node_modules/.http-parser-js-D1xNwVlz',
+106 silly reify   '/data/node_modules/idb': '/data/node_modules/.idb-dgZ3V7mQ',
+106 silly reify   '/data/node_modules/is-fullwidth-code-point': '/data/node_modules/.is-fullwidth-code-point-msBfcTjH',
+106 silly reify   '/data/node_modules/lodash.camelcase': '/data/node_modules/.lodash.camelcase-58Tawdmr',
+106 silly reify   '/data/node_modules/long': '/data/node_modules/.long-OYGEJ42K',
+106 silly reify   '/data/node_modules/node-red-contrib-smartnora': '/data/node_modules/.node-red-contrib-smartnora-yTiCZFFY',
+106 silly reify   '/data/node_modules/nofilter': '/data/node_modules/.nofilter-0Q3hmGgs',
+106 silly reify   '/data/node_modules/protobufjs': '/data/node_modules/.protobufjs-4bBZQm2F',
+106 silly reify   '/data/node_modules/require-directory': '/data/node_modules/.require-directory-gvzRtPaS',
+106 silly reify   '/data/node_modules/require-from-string': '/data/node_modules/.require-from-string-zPskbU6J',
+106 silly reify   '/data/node_modules/rxjs': '/data/node_modules/.rxjs-fi2oBhE4',
+106 silly reify   '/data/node_modules/string-width': '/data/node_modules/.string-width-0WgxdXS3',
+106 silly reify   '/data/node_modules/strip-ansi': '/data/node_modules/.strip-ansi-zyOGG1f9',
+106 silly reify   '/data/node_modules/tslib': '/data/node_modules/.tslib-6LOZ5WH5',
+106 silly reify   '/data/node_modules/undici-types': '/data/node_modules/.undici-types-N38lcTrn',
+106 silly reify   '/data/node_modules/web-vitals': '/data/node_modules/.web-vitals-mDYjgHM2',
+106 silly reify   '/data/node_modules/websocket-driver': '/data/node_modules/.websocket-driver-UcHcu8yy',
+106 silly reify   '/data/node_modules/websocket-extensions': '/data/node_modules/.websocket-extensions-novO1FAK',
+106 silly reify   '/data/node_modules/wrap-ansi': '/data/node_modules/.wrap-ansi-f88q5fUg',
+106 silly reify   '/data/node_modules/y18n': '/data/node_modules/.y18n-eIcXh3qx',
+106 silly reify   '/data/node_modules/yargs': '/data/node_modules/.yargs-0QWI5jwv',
+106 silly reify   '/data/node_modules/yargs-parser': '/data/node_modules/.yargs-parser-Nx4XVQCj'
+106 silly reify }
+107 silly REMOVE node_modules/yargs-parser
+108 silly REMOVE node_modules/yargs
+109 silly REMOVE node_modules/y18n
+110 silly REMOVE node_modules/wrap-ansi
+111 silly REMOVE node_modules/websocket-extensions
+112 silly REMOVE node_modules/websocket-driver
+113 silly REMOVE node_modules/web-vitals
+114 silly REMOVE node_modules/undici-types
+115 silly REMOVE node_modules/tslib
+116 silly REMOVE node_modules/strip-ansi
+117 silly REMOVE node_modules/string-width
+118 silly REMOVE node_modules/rxjs
+119 silly REMOVE node_modules/require-from-string
+120 silly REMOVE node_modules/require-directory
+121 silly REMOVE node_modules/protobufjs
+122 silly REMOVE node_modules/nofilter
+123 silly REMOVE node_modules/node-red-contrib-smartnora
+124 silly REMOVE node_modules/long
+125 silly REMOVE node_modules/lodash.camelcase
+126 silly REMOVE node_modules/is-fullwidth-code-point
+127 silly REMOVE node_modules/idb
+128 silly REMOVE node_modules/http-parser-js
+129 silly REMOVE node_modules/get-caller-file
+130 silly REMOVE node_modules/firebase
+131 silly REMOVE node_modules/faye-websocket
+132 silly REMOVE node_modules/fast-uri
+133 silly REMOVE node_modules/escalade
+134 silly REMOVE node_modules/emoji-regex
+135 silly REMOVE node_modules/color-name
+136 silly REMOVE node_modules/color-convert
+137 silly REMOVE node_modules/cliui
+138 silly REMOVE node_modules/cbor
+139 silly REMOVE node_modules/ansi-styles
+140 silly REMOVE node_modules/ansi-regex
+141 silly REMOVE node_modules/@types/node
+142 silly REMOVE node_modules/@protobufjs/utf8
+143 silly REMOVE node_modules/@protobufjs/pool
+144 silly REMOVE node_modules/@protobufjs/path
+145 silly REMOVE node_modules/@protobufjs/inquire
+146 silly REMOVE node_modules/@protobufjs/float
+147 silly REMOVE node_modules/@protobufjs/fetch
+148 silly REMOVE node_modules/@protobufjs/eventemitter
+149 silly REMOVE node_modules/@protobufjs/codegen
+150 silly REMOVE node_modules/@protobufjs/base64
+151 silly REMOVE node_modules/@protobufjs/aspromise
+152 silly REMOVE node_modules/@grpc/proto-loader
+153 silly REMOVE node_modules/@grpc/grpc-js
+154 silly REMOVE node_modules/@firebase/webchannel-wrapper
+155 silly REMOVE node_modules/@firebase/util
+156 silly REMOVE node_modules/@firebase/storage-types
+157 silly REMOVE node_modules/@firebase/storage-compat
+158 silly REMOVE node_modules/@firebase/storage
+159 silly REMOVE node_modules/@firebase/remote-config-types
+160 silly REMOVE node_modules/@firebase/remote-config-compat
+161 silly REMOVE node_modules/@firebase/remote-config
+162 silly REMOVE node_modules/@firebase/performance-types
+163 silly REMOVE node_modules/@firebase/performance-compat
+164 silly REMOVE node_modules/@firebase/performance
+165 silly REMOVE node_modules/@firebase/messaging-interop-types
+166 silly REMOVE node_modules/@firebase/messaging-compat
+167 silly REMOVE node_modules/@firebase/messaging
+168 silly REMOVE node_modules/@firebase/logger
+169 silly REMOVE node_modules/@firebase/installations-types
+170 silly REMOVE node_modules/@firebase/installations-compat
+171 silly REMOVE node_modules/@firebase/installations
+172 silly REMOVE node_modules/@firebase/functions-types
+173 silly REMOVE node_modules/@firebase/functions-compat
+174 silly REMOVE node_modules/@firebase/functions
+175 silly REMOVE node_modules/@firebase/firestore-types
+176 silly REMOVE node_modules/@firebase/firestore-compat
+177 silly REMOVE node_modules/@firebase/firestore
+178 silly REMOVE node_modules/@firebase/database-types
+179 silly REMOVE node_modules/@firebase/database-compat
+180 silly REMOVE node_modules/@firebase/database
+181 silly REMOVE node_modules/@firebase/data-connect
+182 silly REMOVE node_modules/@firebase/component
+183 silly REMOVE node_modules/@firebase/auth-types
+184 silly REMOVE node_modules/@firebase/auth-interop-types
+185 silly REMOVE node_modules/@firebase/auth-compat
+186 silly REMOVE node_modules/@firebase/auth
+187 silly REMOVE node_modules/@firebase/app-types
+188 silly REMOVE node_modules/@firebase/app-compat
+189 silly REMOVE node_modules/@firebase/app-check-types
+190 silly REMOVE node_modules/@firebase/app-check-interop-types
+191 silly REMOVE node_modules/@firebase/app-check-compat
+192 silly REMOVE node_modules/@firebase/app-check
+193 silly REMOVE node_modules/@firebase/app
+194 silly REMOVE node_modules/@firebase/analytics-types
+195 silly REMOVE node_modules/@firebase/analytics-compat
+196 silly REMOVE node_modules/@firebase/analytics
+197 silly REMOVE node_modules/@firebase/ai
+198 silly REMOVE node_modules/@andrei-tatar/nora-firebase-common
+199 silly REMOVE node_modules/@andrei-tatar/nora-firebase-common/node_modules/json-schema-traverse
+200 silly REMOVE node_modules/@andrei-tatar/nora-firebase-common/node_modules/ajv
+201 verbose cwd /data
+202 verbose os Linux 6.6.87.2-microsoft-standard-WSL2
+203 verbose node v20.19.6
+204 verbose npm  v10.8.2
+205 verbose exit 0
+206 info ok

@@ -514,5 +514,288 @@
                 "file": "/data/node_modules/node-red-contrib-stackhero-influxdb-v2/src/write.js"
             }
         }
+    },
+    "node-red-contrib-smartnora": {
+        "name": "node-red-contrib-smartnora",
+        "version": "1.25.0",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "noraf-ac": {
+                "name": "noraf-ac",
+                "types": [
+                    "noraf-ac"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-ac.js"
+            },
+            "noraf-airpurifier": {
+                "name": "noraf-airpurifier",
+                "types": [
+                    "noraf-airpurifier"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-airpurifier.js"
+            },
+            "noraf-blinds": {
+                "name": "noraf-blinds",
+                "types": [
+                    "noraf-blinds"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-blinds.js"
+            },
+            "noraf-camera": {
+                "name": "noraf-camera",
+                "types": [
+                    "noraf-camera"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-camera.js"
+            },
+            "noraf-charger": {
+                "name": "noraf-charger",
+                "types": [
+                    "noraf-charger"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-charger.js"
+            },
+            "noraf-config": {
+                "name": "noraf-config",
+                "types": [
+                    "noraf-config"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-config.js"
+            },
+            "noraf-doorbell": {
+                "name": "noraf-doorbell",
+                "types": [
+                    "noraf-doorbell"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-doorbell.js"
+            },
+            "noraf-fan": {
+                "name": "noraf-fan",
+                "types": [
+                    "noraf-fan"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-fan.js"
+            },
+            "noraf-garage": {
+                "name": "noraf-garage",
+                "types": [
+                    "noraf-garage"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-garage.js"
+            },
+            "noraf-light": {
+                "name": "noraf-light",
+                "types": [
+                    "noraf-light"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-light.js"
+            },
+            "noraf-lock": {
+                "name": "noraf-lock",
+                "types": [
+                    "noraf-lock"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-lock.js"
+            },
+            "noraf-media": {
+                "name": "noraf-media",
+                "types": [
+                    "noraf-media"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-media.js"
+            },
+            "noraf-notify": {
+                "name": "noraf-notify",
+                "types": [
+                    "noraf-notify"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-notify.js"
+            },
+            "noraf-openclose": {
+                "name": "noraf-openclose",
+                "types": [
+                    "noraf-openclose"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-openclose.js"
+            },
+            "noraf-outlet": {
+                "name": "noraf-outlet",
+                "types": [
+                    "noraf-outlet"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-outlet.js"
+            },
+            "noraf-scene": {
+                "name": "noraf-scene",
+                "types": [
+                    "noraf-scene"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-scene.js"
+            },
+            "noraf-security": {
+                "name": "noraf-security",
+                "types": [
+                    "noraf-security"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-security.js"
+            },
+            "noraf-sensor": {
+                "name": "noraf-sensor",
+                "types": [
+                    "noraf-sensor"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-sensor.js"
+            },
+            "noraf-sousvide": {
+                "name": "noraf-sousvide",
+                "types": [
+                    "noraf-sousvide"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-sousvide.js"
+            },
+            "noraf-speaker": {
+                "name": "noraf-speaker",
+                "types": [
+                    "noraf-speaker"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-speaker.js"
+            },
+            "noraf-sprinkler": {
+                "name": "noraf-sprinkler",
+                "types": [
+                    "noraf-sprinkler"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-sprinkler.js"
+            },
+            "noraf-switch": {
+                "name": "noraf-switch",
+                "types": [
+                    "noraf-switch"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-switch.js"
+            },
+            "noraf-thermostat": {
+                "name": "noraf-thermostat",
+                "types": [
+                    "noraf-thermostat"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-thermostat.js"
+            },
+            "noraf-vacuum": {
+                "name": "noraf-vacuum",
+                "types": [
+                    "noraf-vacuum"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-vacuum.js"
+            },
+            "noraf-async": {
+                "name": "noraf-async",
+                "types": [
+                    "noraf-async"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-smartnora",
+                "file": "/data/node_modules/node-red-contrib-smartnora/build/nodes/nora-async.js"
+            }
+        }
     }
 }

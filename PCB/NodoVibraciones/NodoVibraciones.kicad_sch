@@ -6,8 +6,8 @@
 	(paper "A4" portrait)
 	(title_block
 		(title "VibraNet (Red de nodos sismoreceptores)")
-		(date "2025-10-05")
-		(rev "v0.0.1")
+		(date "2026-02-08")
+		(rev "v1.1.2")
 		(company "UNIVERSIDAD NACIONAL DE CUYO - FACULTAD DE INGENIERIA")
 		(comment 1 "Proyecto Tipo C · Red de nodos de adquisición de datos sismográficos")
 		(comment 2 "Autor: Mario Papetti Funes")
@@ -3101,10 +3101,6 @@
 		(uuid "1cf6b2e4-cf19-4858-b524-148686341ae4")
 	)
 	(no_connect
-		(at 127 167.64)
-		(uuid "2fbe3deb-075d-4712-9ef4-0ed467b98d5c")
-	)
-	(no_connect
 		(at 59.69 228.6)
 		(uuid "a474106a-72c3-45f6-8886-84011d00f889")
 	)
@@ -3284,6 +3280,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 167.64) (xy 139.7 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18f16884-058a-43d8-8020-1ed15dd43e2f")
+	)
+	(wire
+		(pts
 			(xy 135.89 185.42) (xy 137.16 186.69)
 		)
 		(stroke
@@ -3441,6 +3447,16 @@
 			(type default)
 		)
 		(uuid "3a79eadb-deeb-4335-9270-3895a0c0cd2a")
+	)
+	(wire
+		(pts
+			(xy 127 167.64) (xy 128.27 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41763acd-758c-4e69-a01c-723cb1cecf05")
 	)
 	(wire
 		(pts
@@ -3984,6 +4000,16 @@
 	)
 	(wire
 		(pts
+			(xy 135.89 167.64) (xy 138.43 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97dfebbb-0bcf-41ca-b46a-443f488b35e7")
+	)
+	(wire
+		(pts
 			(xy 158.75 193.04) (xy 160.02 194.31)
 		)
 		(stroke
@@ -4291,6 +4317,16 @@
 			(type default)
 		)
 		(uuid "d6c1f67b-7ffe-407d-b7ec-cc0c19fce312")
+	)
+	(wire
+		(pts
+			(xy 139.7 153.67) (xy 139.7 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d84356c8-6cbc-42f2-977f-1e0cc28edd70")
 	)
 	(wire
 		(pts
@@ -5056,6 +5092,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VCC")
+		(at 139.7 153.67 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0148d875-21f3-4427-a9cd-5208db343de1")
+		(property "Reference" "#PWR024"
+			(at 139.7 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VCC"
+			(at 139.7 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 139.7 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "602eb812-138e-4ba0-9fae-a271a5d5ef71")
+		)
+		(instances
+			(project "NodoVibraciones"
+				(path "/93d2f0b1-2d60-4584-ad88-dd8b1dc37d8d"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED")
 		(at 147.32 187.96 90)
 		(unit 1)
@@ -5119,70 +5221,6 @@
 			(project "NodoVibraciones"
 				(path "/93d2f0b1-2d60-4584-ad88-dd8b1dc37d8d"
 					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 148.59 135.89 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "060d1a5f-2bbb-472a-a0d1-83085b31c5d4")
-		(property "Reference" "H4"
-			(at 151.13 134.6199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole"
-			(at 151.13 137.1599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 148.59 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 148.59 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 148.59 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "NodoVibraciones"
-				(path "/93d2f0b1-2d60-4584-ad88-dd8b1dc37d8d"
-					(reference "H4")
 					(unit 1)
 				)
 			)
@@ -5452,7 +5490,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uf"
+		(property "Value" "100uf"
 			(at 59.69 126.3649 0)
 			(effects
 				(font
@@ -5522,7 +5560,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "102"
+		(property "Value" "104"
 			(at 91.44 128.2699 0)
 			(effects
 				(font
@@ -5729,6 +5767,7 @@
 	(symbol
 		(lib_id "Diode:1N4148")
 		(at 120.65 196.85 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5840,7 +5879,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 148.336 163.576 90)
 			(effects
 				(font
@@ -6039,7 +6078,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "4k7"
 			(at 134.62 193.0399 0)
 			(effects
 				(font
@@ -6048,7 +6087,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 138.176 191.516 90)
 			(effects
 				(font
@@ -6222,6 +6261,75 @@
 			(project "NodoVibraciones"
 				(path "/93d2f0b1-2d60-4584-ad88-dd8b1dc37d8d"
 					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 132.08 167.64 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "43fa100e-c3a4-492c-8d51-f399f5664dc1")
+		(property "Reference" "R11"
+			(at 132.08 161.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 132.08 163.83 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
+			(at 132.334 168.656 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 132.08 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 132.08 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c62abe18-45bc-4380-838d-84aeaedf9f27")
+		)
+		(pin "1"
+			(uuid "03e770b6-1f2f-4bea-aeba-0d2b5ff5ead6")
+		)
+		(instances
+			(project "NodoVibraciones"
+				(path "/93d2f0b1-2d60-4584-ad88-dd8b1dc37d8d"
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -6607,7 +6715,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 81.026 162.306 90)
 			(effects
 				(font
@@ -6749,7 +6857,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 157.226 163.576 90)
 			(effects
 				(font
@@ -6876,7 +6984,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "102"
+		(property "Value" "104"
 			(at 49.53 128.2699 0)
 			(effects
 				(font
@@ -6956,7 +7064,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 70.866 162.306 90)
 			(effects
 				(font
@@ -7223,7 +7331,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 96.266 182.626 90)
 			(effects
 				(font
@@ -7356,7 +7464,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 158.496 197.866 90)
 			(effects
 				(font
@@ -7563,7 +7671,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 54.356 164.846 90)
 			(effects
 				(font
@@ -8237,7 +8345,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uf"
+		(property "Value" "100uf"
 			(at 102.87 127.6349 0)
 			(effects
 				(font
@@ -8355,6 +8463,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Polarized_US")
+		(at 86.36 199.39 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e3785de0-c8fa-4cad-a061-a00e9f40d55c")
+		(property "Reference" "C4"
+			(at 86.995 191.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10uF"
+			(at 86.995 194.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm"
+			(at 86.36 199.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 86.36 199.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Polarized capacitor, US symbol"
+			(at 86.36 199.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "5bc1435d-181d-4ddc-acfb-efa03422b09c")
+		)
+		(pin "1"
+			(uuid "8382e54f-c060-40e1-9a89-364f590fc689")
+		)
+		(instances
+			(project "NodoVibraciones"
+				(path "/93d2f0b1-2d60-4584-ad88-dd8b1dc37d8d"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_US")
 		(at 81.28 190.5 0)
 		(mirror x)
@@ -8383,7 +8559,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 82.296 190.246 90)
 			(effects
 				(font
@@ -8685,74 +8861,6 @@
 			(project "NodoVibraciones"
 				(path "/93d2f0b1-2d60-4584-ad88-dd8b1dc37d8d"
 					(reference "#PWR022")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 86.36 199.39 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f13c7851-b2f2-473a-92ac-9ae936e38258")
-		(property "Reference" "C4"
-			(at 86.36 191.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "104"
-			(at 86.36 194.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
-			(at 82.55 200.3552 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 86.36 199.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 86.36 199.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bf10d108-e973-4ce8-9f8a-df892f7f369e")
-		)
-		(pin "2"
-			(uuid "b0e23bce-c0ee-472b-a572-ae334dfd18c7")
-		)
-		(instances
-			(project "NodoVibraciones"
-				(path "/93d2f0b1-2d60-4584-ad88-dd8b1dc37d8d"
-					(reference "C4")
 					(unit 1)
 				)
 			)

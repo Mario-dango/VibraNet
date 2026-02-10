@@ -15,8 +15,8 @@
 #define WIFI_PASS "Bawbaaw42"
 
 // Configuración WiFi
-// #define WIFI_SSID "MovistarFibra-5GHz-55E0E8"
-// #define WIFI_PASS "L2QTE2P4UrJECosNhNtP"
+#define WIFI_SSID "momantai"
+#define WIFI_PASS "42425640"
 
 // Configuración MQTT
 // #define MQTT_SERVER "192.168.100.68" // ¡PON TU IP DE DOCKER/MOSQUITTO!
@@ -29,7 +29,9 @@
 
 #define LED_PIN 2
 #define BATTERY_PIN A0
-#define NODE_ID "dango_node_01"
+// #define NODE_ID "dango_node_001"   // Vibranet on protoboard
+#define NODE_ID "dango_node_002"   // Vibranet on PCB
+// #define NODE_ID "dango_node_003"   // Vibranet on protoboard
 
 #endif // CONFIG_H
 
