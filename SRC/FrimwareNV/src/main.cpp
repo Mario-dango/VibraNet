@@ -1,6 +1,6 @@
 /**
- * Vibranet Node v6.0 - Triaxial Snapshot & Debug Edition
- * PATCH: Soft Start + WAKE_RF_DISABLED (Solución Brownout)
+ * New branch
+ * 
  */
 
 #include <Arduino.h>
