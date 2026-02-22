@@ -26,6 +26,17 @@
 #define GPIO_IN                 (*(volatile uint32_t *)(GPIO_BASE_ADDR + 0x18))
 
 // ============================================================================
+// 1.1 REGISTROS DE UART
+// ============================================================================
+
+#define UART0_BASE_ADDR        0x60000000
+#define UART0_FIFO             (*(volatile uint32_t *)(UART0_BASE_ADDR + 0x00))
+#define UART0_STATUS           (*(volatile uint32_t *)(UART0_BASE_ADDR + 0x1C))
+
+#define UART_TX_FIFO_MASK      0x000000FF 
+#define UART_TX_FIFO_SHIFT     16
+
+// ============================================================================
 // 2. REGISTROS IOMUX (Bloque 0x60000800)
 // ============================================================================
 #define MUX_BASE_ADDR           0x60000800
@@ -75,11 +86,20 @@
 #define setLOW(pin)           (GPIO_OUT_W1TC = (1 << (pin)))
 
 // Lectura
-#define readPIN(pin)          (GPIO_IN & (1 << (pin)))
+#define READ_PIN(pin)         ((GPIO_IN >> (pin)) & 1)
 
 // Pull-up (Actúa sobre el registro MUX, no sobre el registro GPIO)
 #define setPULLUP(reg)         (reg |= MUX_PULLUP_BIT)
 #define clearPULLUP(reg)       (reg &= ~MUX_PULLUP_BIT)
 
+// ============================================================================
+// 5. FUNCIONES
+// ============================================================================
+
+void resetESP();
+
+void uart_print(const char* s);
+
+void uart_println(const char* s);
 
 #endif // MACROS_H

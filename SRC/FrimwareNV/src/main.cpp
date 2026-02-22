@@ -16,51 +16,23 @@
 #include <ArduinoJson.h>
 
 #include "config.h" 
-
-// PINES
-#define SDA_PIN 4 
-#define SCL_PIN 5
-#define LED_YELLOW  12 
-#define LED_GREEN   13 
-#define LED_RED     14 
+#include "macros.h"
+#include "feedback.h"
 
 // VERSIONES
 #define HW_VER "1.5"
 #define SW_VER "6.1" // Actualizado para reflejar el parche de energía
 
 // VARIABLES
-struct DeviceConfig {
-    int mode; int sleep_time_s; int mpu_threshold; int sampling_freq; uint32_t burst_size;
-};
+
 DeviceConfig config = {1, 60, 10, 500, 256};  
+
 char node_id[32] = "dango_node_002"; // Valor por defecto si no hay config guardada
 char mqtt_server[40] = ""; char mqtt_port[6] = "1883";
-WiFiClient espClient; PubSubClient client(espClient);
-Adafruit_MPU6050 mpu1; Adafruit_MPU6050 mpu2;
-bool mpu1_active = false; bool mpu2_active = false;
-bool shouldSaveConfig = false;
 
-// ================= HELPERS VISUALES =================
-void setStatus(int pinOn) {
-    digitalWrite(LED_YELLOW, (pinOn == LED_YELLOW) ? HIGH : LOW);
-    digitalWrite(LED_GREEN, (pinOn == LED_GREEN) ? HIGH : LOW);
-    digitalWrite(LED_RED, (pinOn == LED_RED) ? HIGH : LOW);
-}
+WiFiClient espClient; PubSubClient client(espClient); Adafruit_MPU6050 mpu1; Adafruit_MPU6050 mpu2;
 
-void blinkErrorAndRestart() {
-    Serial.println("!!! FALLO CRITICO - REINICIANDO SISTEMA !!!");
-    for(int i=0; i<5; i++) { digitalWrite(LED_RED, HIGH); delay(100); digitalWrite(LED_RED, LOW); delay(100); }
-    ESP.restart();
-}
-
-void printCurrentConfig() {
-    Serial.println("\n--- CONFIGURACION ACTUAL ---");
-    Serial.print("Modo: "); Serial.println(config.mode == 1 ? "BURST (FFT)" : "SNAPSHOT (Acel)");
-    Serial.print("Sleep: "); Serial.print(config.sleep_time_s); Serial.println(" s");
-    Serial.print("Umbral: "); Serial.println(config.mpu_threshold);
-    Serial.print("Freq: "); Serial.println(config.sampling_freq);
-    Serial.println("----------------------------\n");
-}
+bool mpu1_active = false; bool mpu2_active = false; bool shouldSaveConfig = false;
 
 // ================= I2C RECOVERY =================
 void aggressiveBusRecover() {
