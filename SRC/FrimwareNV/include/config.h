@@ -7,10 +7,6 @@
 #define MPU2_ADDR 0x69
 
 // Configuración WiFi
-// #define WIFI_SSID "PAPETTI"
-// #define WIFI_PASS "Chulito$26"
-
-// Configuración WiFi
 #define WIFI_SSID "bawy"
 #define WIFI_PASS "Bawbaaw42"
 
@@ -19,16 +15,15 @@
 #define WIFI_PASS "42425640"
 
 // Configuración MQTT
-// #define MQTT_SERVER "192.168.100.68" // ¡PON TU IP DE DOCKER/MOSQUITTO!
-
-#define MQTT_SERVER "10.81.207.250" // ¡PON TU IP DE DOCKER/MOSQUITTO!
+// IP de docker/mosquito
+#define MQTT_SERVER "10.81.207.250" 
 
 #define MQTT_PORT 1883
 #define MQTT_TOPIC "vibranet/data"
 
-
 #define LED_PIN 2
 #define BATTERY_PIN A0
+
 // #define NODE_ID "dango_node_001"   // Vibranet on protoboard
 #define NODE_ID "dango_node_002"   // Vibranet on PCB
 // #define NODE_ID "dango_node_003"   // Vibranet on protoboard
