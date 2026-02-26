@@ -1,10 +1,15 @@
 #ifndef FEEDBACK_H
 #define FEEDBACK_H
 
-#include "macros.h" // Necesario para DeviceConfig y definiciones de pines
+#include <Arduino.h>
+#include <stdio.h>
+#include "macros.h"
+#include "feedback.h"
 
 void setStatus(int pinOn);
+
 void blinkErrorAndRestart();
-void printCurrentConfig(DeviceConfig config);
+
+void printCurrentConfig(const DeviceConfig &config);
 
 #endif // FEEDBACK_H

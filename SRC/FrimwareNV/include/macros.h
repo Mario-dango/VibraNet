@@ -13,6 +13,10 @@ struct DeviceConfig {
     uint32_t burst_size;
 };
 
+#define NODE_ID_SIZE 32
+#define MQTT_SERVER_SIZE 40
+#define MQTT_PORT_SIZE 6
+
 // ============================================================================
 // Algunas constantes útiles
 // ============================================================================
@@ -30,19 +34,17 @@ struct DeviceConfig {
 // #define WIFI_SSID "PAPETTI"
 // #define WIFI_PASS "Chulito$26"
 
-// Configuración WiFi
-#define WIFI_SSID "bawy"
-#define WIFI_PASS "Bawbaaw42"
+
 
 // Configuración WiFi
+// #define WIFI_SSID "bawy"
+// #define WIFI_PASS "Bawbaaw42"
 #define WIFI_SSID "momantai"
 #define WIFI_PASS "42425640"
-
+ 
 // Configuración MQTT
-// #define MQTT_SERVER "192.168.100.68" // ¡PON TU IP DE DOCKER/MOSQUITTO!
-
-#define MQTT_SERVER "10.81.207.250" // ¡PON TU IP DE DOCKER/MOSQUITTO!
-
+// IP DE DOCKER/MOSQUITTO
+#define MQTT_SERVER "10.81.207.250" 
 #define MQTT_PORT 1883
 #define MQTT_TOPIC "vibranet/data"
 
@@ -54,7 +56,10 @@ struct DeviceConfig {
 // #define NODE_ID "dango_node_003"   // Vibranet on protoboard
 
 /*
-docker run cloudflare/cloudflared:latest tunnel --no-autoupdate run --token eyJhIjoiMTI0ODYyYzg3MDM1NzI0Y2ZhNmI3NjYwYjIyZTA2MTEiLCJ0IjoiNmJkMjllMTEtMTM4Ny00ZTliLWFhYmItMjdmODBkZmJhYWI4IiwicyI6Ik1UUXdZMll4TUdFdFlUVm1NUzAwTWpnd0xXSTRaVGd0WXpFMk9HTmlOR1F6TURCaiJ9
+docker run cloudflare/cloudflared:latest tunnel 
+--no-autoupdate 
+run 
+--token eyJhIjoiMTI0ODYyYzg3MDM1NzI0Y2ZhNmI3NjYwYjIyZTA2MTEiLCJ0IjoiNmJkMjllMTEtMTM4Ny00ZTliLWFhYmItMjdmODBkZmJhYWI4IiwicyI6Ik1UUXdZMll4TUdFdFlUVm1NUzAwTWpnd0xXSTRaVGd0WXpFMk9HTmlOR1F6TURCaiJ9
 */
 
 // ============================================================================
@@ -150,7 +155,7 @@ docker run cloudflare/cloudflared:latest tunnel --no-autoupdate run --token eyJh
 // 5. FUNCIONES
 // ============================================================================
 
-void resetESP(){
+static inline void reinicio_ESP(){
     (*(volatile uint32_t *)(0x60000700 + 0x30)) = 0x10; 
     while(1);
 }

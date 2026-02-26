@@ -1,19 +1,6 @@
 
-
-#include <Adafruit_MPU6050.h>
-#include <Adafruit_Sensor.h>
-#include <Wire.h>
-#include <stdio.h>
-#include <ArduinoJson.h>
-#include <PubSubClient.h>
-#include <WiFiClient.h>
-#include <ESP8266mDNS.h>
-#include <WiFiManager.h>
-#include <new>
-
 #include "sensores.h"
-#include "macros.h"
-#include "string.h"
+
 
 extern "C" void ets_delay_us(uint32_t us);
 
@@ -51,7 +38,11 @@ void blindSensorReset(uint8_t addr) {
 }
 
 // ================= CONFIG SENSORES =================
-void setupMPU_Latch(Adafruit_MPU6050 &mpu, int MPU_ADDR, DeviceConfig config) {
+void setupMPU_Latch(
+    Adafruit_MPU6050 &mpu, 
+    int MPU_ADDR, 
+    DeviceConfig &config
+    ) {
     // 1. Reset y Wake Up
     Wire.beginTransmission(MPU_ADDR); Wire.write(0x6B); Wire.write(0x00); Wire.endTransmission();
     
@@ -85,7 +76,12 @@ void clearMPUInterrupt(uint8_t addr) {
 }
 
 // ================= CAPTURA SNAPSHOT TRIAXIAL (X, Y, Z) =================
-bool runSnapshotMode(Adafruit_MPU6050 &mpu, String sensorName, PubSubClient &client, String node_id) {
+bool runSnapshotMode(
+    Adafruit_MPU6050 &mpu, 
+    String sensorName, 
+    PubSubClient &client, 
+    const char* node_id
+    ) {
     sensors_event_t a, g, t; 
     mpu.getEvent(&a, &g, &t);
     
@@ -113,7 +109,13 @@ bool runSnapshotMode(Adafruit_MPU6050 &mpu, String sensorName, PubSubClient &cli
 }
 
 // ================= CAPTURA BURST TRIAXIAL =================
-bool performBurstCapture(Adafruit_MPU6050 &mpu, String sensorName, String node_id, PubSubClient &client, DeviceConfig config) {
+bool performBurstCapture(
+    Adafruit_MPU6050 &mpu, 
+    const String sensorName, 
+    const char node_id[NODE_ID_SIZE], 
+    PubSubClient &client, 
+    DeviceConfig &config)
+{
     mpu.enableSleep(false); mpu.enableCycle(false); mpu.setFilterBandwidth(MPU6050_BAND_260_HZ);
     
     if (ESP.getFreeHeap() < 15000) { Serial.println("RAM Baja -> 128 muestras"); config.burst_size = 128; }

@@ -1,8 +1,4 @@
-// ================= HELPERS VISUALES =================
 
-#include <Arduino.h>
-#include <stdio.h> // Para snprintf
-#include "macros.h"
 #include "feedback.h"
 
 // Función de retardo de la ROM del ESP8266 (Microsegundos)
@@ -25,10 +21,10 @@ void blinkErrorAndRestart() {
         ets_delay_us(100000); 
         setLOW(LED_RED);
         ets_delay_us(100000); }
-    resetESP();
+    reinicio_ESP();
 }
 
-void printCurrentConfig(DeviceConfig config) {
+void printCurrentConfig(const DeviceConfig &config) {
     Serial.println("\n--- CONFIGURACION ACTUAL ---");
     Serial.print("Modo: "); Serial.println(config.mode == 1 ? "BURST (FFT)" : "SNAPSHOT (Acel)");
     Serial.print("Sleep: "); Serial.print(config.sleep_time_s); Serial.println(" s");
