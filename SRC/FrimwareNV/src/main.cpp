@@ -67,6 +67,7 @@ void setup()
     LittleFS.begin();
     loadMQTTConfig(mqtt_server, mqtt_port);
     loadSystemConfig(config, node_id);
+    initMqttContext(node_id, config, client);
 
     // DEBUG: Ver qué ID estamos usando
     Serial.print("Node ID: ");
